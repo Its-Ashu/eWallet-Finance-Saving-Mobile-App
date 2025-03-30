@@ -1,0 +1,36 @@
+import {StyleSheet} from 'react-native';
+import Theme from '../../theme/Theme';
+
+const styles = StyleSheet.create({
+  viewMain: {
+    marginHorizontal: Theme.responsiveSize.size20,
+    marginVertical: Theme.responsiveSize.size02,
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: Theme.colors.bgColor4,
+    borderRadius: Theme.responsiveSize.size14,
+    paddingVertical: Theme.responsiveSize.size16,
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: Theme.colors.textColor2,
+    fontSize: Theme.responsiveSize.size14,
+    fontFamily: Theme.fonts.fontSansBold,
+  },
+  viewNext: {
+    alignItems: 'flex-end',
+  },
+  nextButton: {
+    alignItems: 'center',
+    backgroundColor: Theme.colors.bgColor1,
+    borderRadius: Theme.responsiveSize.size16,
+    padding: Theme.responsiveSize.size16,
+  },
+  nextIcon: {
+    height: Theme.responsiveSize.size24,
+    width: Theme.responsiveSize.size24,
+  },
+});
+
+export default styles;
