@@ -74,7 +74,7 @@ const RegisterScreen = props => {
               showsVerticalScrollIndicator={false}>
               <View style={styles.viewTop}>
                 <ProgressBar
-                  progress={0.1}
+                  progress={0.125}
                   backIcon={false}
                   onPressback={() => {}}
                 />

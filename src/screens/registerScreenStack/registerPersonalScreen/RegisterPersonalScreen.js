@@ -3,7 +3,7 @@ import {SafeAreaView, StatusBar, Text, View} from 'react-native';
 import {NextButton} from '../../../components/Button';
 import {InputText} from '../../../components/InputText';
 import {ProgressBar} from '../../../components/ProgressBar';
-import { Constants } from '../../../constants';
+import {Constants} from '../../../constants';
 import Theme from '../../../theme/Theme';
 import styles from './styles';
 
@@ -25,7 +25,7 @@ const RegisterPersonalScreen = props => {
         <View style={styles.container}>
           <View style={styles.viewTop}>
             <ProgressBar
-              progress={0.4}
+              progress={0.375}
               backIcon={true}
               onPressback={() => {
                 props.navigation.goBack();

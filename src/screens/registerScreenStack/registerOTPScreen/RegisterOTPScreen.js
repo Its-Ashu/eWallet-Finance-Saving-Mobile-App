@@ -43,7 +43,7 @@ const RegisterOTPScreen = props => {
         <View style={styles.container}>
           <View style={styles.viewTop}>
             <ProgressBar
-              progress={0.2}
+              progress={0.250}
               backIcon={true}
               onPressback={() => {
                 props.navigation.goBack();

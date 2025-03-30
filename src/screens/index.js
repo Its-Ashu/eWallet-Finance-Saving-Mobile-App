@@ -1,4 +1,9 @@
-import {OnboardingHomeScreen, OnboardingWelcomeScreen} from './auth';
+import {
+  OnboardingHomeScreen,
+  OnboardingWelcomeScreen,
+  LoginScreen,
+  LoginPinScreen,
+} from './auth';
 import {
   RegisterScreen,
   RegisterOTPScreen,
@@ -22,4 +27,6 @@ export {
   RegisterAcceptanceScreen,
   RegisterPinScreen,
   RegisterFaceIDScreen,
+  LoginScreen,
+  LoginPinScreen,
 };

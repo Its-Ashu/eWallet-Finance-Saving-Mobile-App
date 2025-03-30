@@ -25,7 +25,7 @@ const InputText = props => {
   return (
     <View
       style={[
-        styles.viewMain,
+        styles.viewMain, props.viewMain,
         {
           borderColor: isFocused
             ? Theme.colors.borderColor5

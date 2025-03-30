@@ -2,66 +2,55 @@ import React, {useState} from 'react';
 import {
   SafeAreaView,
   StatusBar,
-  View,
   Text,
+  View,
   TouchableOpacity,
 } from 'react-native';
 import {Button} from '../../../components/Button';
-import {ProgressBar} from '../../../components/ProgressBar';
 import {Constants} from '../../../constants';
 import Theme from '../../../theme/Theme';
 import styles from './styles';
+const LoginPinScreen = props => {
+  const [pin, setPin] = useState([]);
 
-const RegisterPinScreen = props => {
-    const [pin, setPin] = useState([]);
+  const handleKeyPress = value => {
+    if (value === 'reset') {
+      setPin([]);
+    } else if (value === 'delete') {
+      setPin(pin.slice(0, -1));
+    } else if (pin.length < 4) {
+      setPin([...pin, value]);
+    }
+  };
 
-    const handleKeyPress = value => {
-      if (value === 'reset') {
-        setPin([]);
-      } else if (value === 'delete') {
-        setPin(pin.slice(0, -1));
-      } else if (pin.length < 4) {
-        setPin([...pin, value]);
-      }
-    };
-
-    const listOfKeypadNumbers = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      ' ',
-      '0',
-      'delete',
-      '',
-      'reset',
-      '  ',
-    ];
-
+  const listOfKeypadNumbers = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    ' ',
+    '0',
+    'delete',
+    '',
+    'reset',
+    '  ',
+  ];
   return (
     <>
       <StatusBar
-        backgroundColor={Theme.colors.bgColor2}
-        barStyle={'dark-content'}
+        backgroundColor={Theme.colors.appColor}
+        barStyle={'light-content'}
         hidden={false}
       />
       <SafeAreaView style={styles.viewMainContainer}>
         <View style={styles.container}>
           <View style={styles.viewTop}>
-            <ProgressBar
-              progress={0.750}
-              backIcon={false}
-              onPressback={() => {}}
-            />
-            <Text style={styles.textTitle}>{'Create your PIN'}</Text>
-            <Text style={styles.textSubTitle}>
-              {'Create a four-digit passcode to secure your account'}
-            </Text>
+            <Text style={styles.textTitle}>{'Enter your PIN'}</Text>
           </View>
 
           <View style={styles.pinContainer}>
@@ -100,7 +89,10 @@ const RegisterPinScreen = props => {
           </View>
 
           <Button
-            title={'Set up PIN'}
+            viewMain={{
+              marginVertical: Theme.responsiveSize.size20,
+            }}
+            title={'Continue'}
             onPress={() => {
               props.navigation.navigate(Constants.REGISTER_FACEID_SCREEN);
             }}
@@ -111,4 +103,4 @@ const RegisterPinScreen = props => {
   );
 };
 
-export default RegisterPinScreen;
+export default LoginPinScreen;

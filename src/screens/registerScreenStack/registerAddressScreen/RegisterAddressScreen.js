@@ -27,7 +27,7 @@ const RegisterAddressScreen = props => {
         <View style={styles.container}>
           <View style={styles.viewTop}>
             <ProgressBar
-              progress={0.5}
+              progress={0.500}
               backIcon={true}
               onPressback={() => {
                 props.navigation.goBack();

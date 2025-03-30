@@ -57,6 +57,7 @@ export default Theme = {
     Minus_Icon: require('../resources/ic_minus_icon.png'),
     Map_Image: require('../resources/im_map.png'),
     Star_Icon: require('../resources/ic_star_icon.png'),
+    Scan_Icon: require('../resources/ic_scan_icon.png'),
   },
   fonts: {
     // DMSans

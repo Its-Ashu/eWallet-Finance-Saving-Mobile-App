@@ -22,6 +22,7 @@ export const REGISTER_FACEID_SCREEN = 'RegisterFaceIDScreen';
 //Auth Screens
 export const SPLASH_SCREEN = 'SplashScreen';
 export const LOGIN_SCREEN = 'LoginScreen';
+export const LOGIN_PIN_SCREEN = 'LoginPinScreen';
 
 //Bottom Tab stack
 export const HOME_SCREEN = 'HomeScreen';

@@ -30,7 +30,7 @@ const RegisterCheckScreen = props => {
         <View style={styles.container}>
           <View style={styles.viewTop}>
             <ProgressBar
-              progress={0.6}
+              progress={0.625}
               backIcon={true}
               onPressback={() => {}}
             />
@@ -86,6 +86,7 @@ const RegisterCheckScreen = props => {
               title={'I accept'}
               onPress={() => {
                 props.navigation.navigate(Constants.REGISTER_PIN_SCREEN);
+                setModalVisible(false);
               }}
             />
           </View>

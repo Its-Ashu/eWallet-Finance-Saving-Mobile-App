@@ -8,12 +8,12 @@ const styles = StyleSheet.create({
   viewMainContainer: {
     height: '100%',
     width: '100%',
-    backgroundColor: Theme.colors.bgColor2,
+    backgroundColor: Theme.colors.bgColor1,
   },
   container: {
     flex: 1,
+    justifyContent: 'center',
     backgroundColor: Theme.colors.bgColor2,
-    paddingBottom: Theme.responsiveSize.size15,
   },
   viewTop: {
     marginTop: Theme.responsiveSize.size30,
@@ -22,19 +22,10 @@ const styles = StyleSheet.create({
   textTitle: {
     textAlign: 'center',
     color: Theme.colors.textColor1,
-    fontSize: Theme.responsiveSize.size24,
+    fontSize: Theme.responsiveSize.size34,
     fontFamily: Theme.fonts.fontSansBold,
     marginTop: Theme.responsiveSize.size16,
     lineHeight: Theme.responsiveSize.size34,
-  },
-  textSubTitle: {
-    textAlign: 'center',
-    color: Theme.colors.textColor6,
-    fontSize: Theme.responsiveSize.size14,
-    fontFamily: Theme.fonts.fontSansMedium,
-    lineHeight: Theme.responsiveSize.size22,
-    paddingHorizontal: Theme.responsiveSize.size30,
-    marginTop: Theme.responsiveSize.size04,
   },
   pinContainer: {
     flexDirection: 'row',

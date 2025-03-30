@@ -2,8 +2,13 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Theme from '../theme/Theme';
-import {OnboardingHomeScreen, OnboardingWelcomeScreen} from '../screens';
-import { Constants } from '../constants';
+import {
+  LoginPinScreen,
+  LoginScreen,
+  OnboardingHomeScreen,
+  OnboardingWelcomeScreen,
+} from '../screens';
+import {Constants} from '../constants';
 import RegisterScreenStack from './RegisterScreenStack';
 
 const Stack = createNativeStackNavigator();
@@ -27,9 +32,19 @@ const AuthStackNavigation = () => {
           component={OnboardingWelcomeScreen}
           options={{headerShown: false}}
         />
-         <Stack.Screen
+        <Stack.Screen
           name={Constants.REGISTER_SCREEN_STACK}
           component={RegisterScreenStack}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.LOGIN_SCREEN}
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.LOGIN_PIN_SCREEN}
+          component={LoginPinScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

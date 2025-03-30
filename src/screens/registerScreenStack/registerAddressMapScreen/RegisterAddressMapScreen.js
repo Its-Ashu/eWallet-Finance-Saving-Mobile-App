@@ -51,7 +51,7 @@ const RegisterAddressMapScreen = props => {
         <View style={styles.container}>
           <View style={styles.paddingH20}>
             <View style={styles.viewTop}>
-              <ProgressBar progress={0.8} />
+              <ProgressBar progress={0.875} />
               <Text style={styles.textTitle}>{'Home address'}</Text>
             </View>
             <View style={styles.viewSearchLocation}>

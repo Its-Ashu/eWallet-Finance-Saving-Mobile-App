@@ -1,27 +1,28 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import Theme from '../../../theme/Theme';
+
+const {width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   viewMainContainer: {
     height: '100%',
     width: '100%',
-    backgroundColor: Theme.colors.bgColor2,
+    backgroundColor: Theme.colors.bgColor1,
   },
   container: {
-    height: '100%',
-    width: '100%',
+    flex: 1,
     backgroundColor: Theme.colors.bgColor2,
     paddingHorizontal: Theme.responsiveSize.size20,
   },
   viewTop: {
-    marginVertical: Theme.responsiveSize.size26,
+    marginVertical: Theme.responsiveSize.size40,
   },
   textTitle: {
     letterSpacing: -0.8,
     textAlign: 'center',
     color: Theme.colors.textColor1,
     marginTop: Theme.responsiveSize.size16,
-    fontSize: Theme.responsiveSize.size24,
+    fontSize: Theme.responsiveSize.size34,
     fontFamily: Theme.fonts.fontSansBold,
   },
   textSubTitle: {
@@ -34,8 +35,20 @@ const styles = StyleSheet.create({
     letterSpacing: -0.3,
     textAlign: 'center',
   },
-  marginT24: {
-    marginTop: Theme.responsiveSize.size24,
+  viewRow: {
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    marginTop: Theme.responsiveSize.size20,
+  },
+  textPassword: {
+    flex: 1,
+    letterSpacing: -0.32,
+    color: Theme.colors.textColor1,
+    fontSize: Theme.responsiveSize.size14,
+    fontFamily: Theme.fonts.fontSansMedium,
+  },
+  viewButton: {
+    backgroundColor: Theme.colors.bgColor4,
   },
 });
 
