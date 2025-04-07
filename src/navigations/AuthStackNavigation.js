@@ -10,6 +10,7 @@ import {
 } from '../screens';
 import {Constants} from '../constants';
 import RegisterScreenStack from './RegisterScreenStack';
+import BottomTabNavigation from './BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,11 @@ const AuthStackNavigation = () => {
         <Stack.Screen
           name={Constants.LOGIN_PIN_SCREEN}
           component={LoginPinScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.BOTTOM_TAB_NAVIGATION}
+          component={BottomTabNavigation}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

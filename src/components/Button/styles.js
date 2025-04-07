@@ -7,10 +7,17 @@ const styles = StyleSheet.create({
     marginVertical: Theme.responsiveSize.size02,
   },
   button: {
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: Theme.colors.bgColor4,
     borderRadius: Theme.responsiveSize.size14,
     paddingVertical: Theme.responsiveSize.size16,
+  },
+  plusIcon: {
+    height: Theme.responsiveSize.size16,
+    width: Theme.responsiveSize.size16,
+    marginRight:Theme.responsiveSize.size10
   },
   buttonText: {
     textAlign: 'center',

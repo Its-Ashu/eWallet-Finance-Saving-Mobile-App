@@ -2,6 +2,8 @@
 //Navigation
 export const AUTH_STACK_NAVIGATION = 'AuthStackNavigation';
 export const REGISTER_SCREEN_STACK = 'RegisterScreenStack';
+export const BOTTOM_TAB_NAVIGATION = 'BottomTabNavigation';
+export const HOME_SCREEN_STACK = 'HomeScreenStack';
 
 //OnBoarding Screens
 export const ONBOARDING_HOME_SCREEN = 'OnboardingHomeScreen';
@@ -26,23 +28,11 @@ export const LOGIN_PIN_SCREEN = 'LoginPinScreen';
 
 //Bottom Tab stack
 export const HOME_SCREEN = 'HomeScreen';
-export const CATEGORIES_SCREEN = 'CategoriesScreen';
-export const NOTIFICATION_SCREEN = 'NotificationScreen';
+export const SEARCH_SCREEN = 'SearchScreen';
+export const ADD_SCREEN = 'AddScreen';
+export const ACTIVITY_SCREEN = 'ActivityScreen';
 export const PROFILE_SCREEN = 'ProfileScreen';
 
-//CategoriesScreenStack
-export const PRODUCT_SCREEN = 'ProductScreen';
-export const PRODUCT_DETAIL_SCREEN = 'ProductDetailScreen';
-
-//Profile Screen screens
-export const ADDRESS_BOOK_SCREEN = 'AddressBookScreen';
-export const ADD_DELIVERY_ADDRESS = 'AddDeliveryAddress';
-export const REVIEWS_SCREEN = 'ReviewScreen';
-export const SETTINGS_SCREEN = 'SettingsScreen';
-
-//Admin Screen Stack
-export const ADMIN_HOME_SCREEN = 'AdminHomeScreen';
-export const ADMIN_NOTIFICATION_SCREEN = 'AdminNotificationScreen';
-export const ADMIN_CATEGORIES_SCREEN = 'AdminCategoriesScreen';
-export const ADMIN_PRODUCT_SCREEN = 'AdminProductScreen';
-export const ADMIN_PRODUCT_DETAIL_SCREEN = 'AdminProductDetailScreen';
+//Home Screen stack
+export const VERIFY_IDENTITY_SCREEN_1 = 'VerifyIdentityScreen1';
+export const PASSPORT_CHECK_SCREEN = 'PassportCheckScreen';

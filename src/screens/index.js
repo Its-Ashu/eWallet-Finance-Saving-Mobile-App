@@ -15,6 +15,13 @@ import {
   RegisterPinScreen,
   RegisterFaceIDScreen,
 } from './registerScreenStack';
+import {
+  HomeScreen,
+  SearchScreen,
+  AddScreen,
+  ActivityScreen,
+  ProfileScreen,
+} from './bottomStack';
 export {
   OnboardingHomeScreen,
   OnboardingWelcomeScreen,
@@ -29,4 +36,9 @@ export {
   RegisterFaceIDScreen,
   LoginScreen,
   LoginPinScreen,
+  HomeScreen,
+  SearchScreen,
+  AddScreen,
+  ActivityScreen,
+  ProfileScreen,
 };
