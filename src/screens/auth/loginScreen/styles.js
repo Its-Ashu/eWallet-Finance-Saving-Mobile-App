@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Theme.colors.textColor1,
     marginTop: Theme.responsiveSize.size16,
-    fontSize: Theme.responsiveSize.size34,
+    fontSize: Theme.responsiveSize.size32,
     fontFamily: Theme.fonts.fontSansBold,
   },
   textSubTitle: {

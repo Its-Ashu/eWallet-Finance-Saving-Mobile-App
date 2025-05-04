@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     letterSpacing: -1,
     textAlign: 'center',
     color: Theme.colors.textColor2,
-    fontSize: Theme.responsiveSize.size34,
+    fontSize: Theme.responsiveSize.size32,
     fontFamily: Theme.fonts.fontSansBold,
   },
   viewButton:{

@@ -9,6 +9,7 @@ import {
   Pressable,
 } from 'react-native';
 import {Button} from '../../../components/Button';
+import {Constants} from '../../../constants';
 import Theme from '../../../theme/Theme';
 import styles from './styles';
 const HomeScreen = props => {
@@ -54,7 +55,13 @@ const HomeScreen = props => {
                   {'Please, confirm your ID and unlock all app features'}
                 </Text>
                 <View style={styles.viewRow}>
-                  <Pressable style={styles.viewPlus} onPress={() => {}}>
+                  <Pressable
+                    style={styles.viewPlus}
+                    onPress={() => {
+                      props.navigation.navigate(
+                        Constants.VERIFY_IDENTITY_SCREEN_1,
+                      );
+                    }}>
                     <Image
                       style={styles.plusIcon}
                       source={Theme.icons.Plus_White_Icon}

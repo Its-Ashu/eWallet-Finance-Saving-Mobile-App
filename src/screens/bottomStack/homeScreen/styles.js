@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   textTitle: {
     textAlign: 'center',
-    fontSize: Theme.responsiveSize.size34,
+    fontSize: Theme.responsiveSize.size32,
     fontFamily: Theme.fonts.fontSansBold,
     color: Theme.colors.textColor2,
     letterSpacing: -1,

@@ -23,6 +23,7 @@ export default Theme = {
     bgColor9: '#F1F3FA',
     bgColor10: '#DFD4F9',
     bgColor11: '#E1E3FF',
+    bgColor12: '#0047FF1A',
 
     borderColor1: '#12033A',
     borderColor2: '#ffffff',
@@ -42,6 +43,7 @@ export default Theme = {
     textColor10: '#ffffffcc',
     textColor11: '#ffffff1a',
     textColor12: '#12033A66',
+    textColor13: '#12033ACC',
   },
   icons: {
     Start_Investing_Icon: require('../resources/ic_start_investing.png'),

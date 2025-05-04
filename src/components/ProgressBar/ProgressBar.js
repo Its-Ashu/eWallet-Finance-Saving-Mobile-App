@@ -5,7 +5,8 @@ import styles from './styles';
 
 const ProgressBar = props => {
   return (
-    <View style={props.backIcon && styles.viewMain}>
+    <View style={styles.viewMain}>
+      {props.closeIcon ? <View style={styles.backIcon} /> : null}
       {props.backIcon ? (
         <TouchableOpacity onPress={props.onPressback}>
           <Image style={styles.backIcon} source={Theme.icons.Back_Icon} />
@@ -21,6 +22,11 @@ const ProgressBar = props => {
         />
       </View>
 
+      {props.closeIcon ? (
+        <TouchableOpacity onPress={props.onPressClose}>
+          <Image style={styles.backIcon} source={Theme.icons.Close_Icon} />
+        </TouchableOpacity>
+      ) : null}
       {props.backIcon ? <View style={styles.backIcon} /> : null}
     </View>
   );

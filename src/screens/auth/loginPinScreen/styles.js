@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
   textTitle: {
     textAlign: 'center',
     color: Theme.colors.textColor1,
-    fontSize: Theme.responsiveSize.size34,
+    fontSize: Theme.responsiveSize.size32,
     fontFamily: Theme.fonts.fontSansBold,
     marginTop: Theme.responsiveSize.size16,
-    lineHeight: Theme.responsiveSize.size34,
+    lineHeight: Theme.responsiveSize.size32,
   },
   pinContainer: {
     flexDirection: 'row',

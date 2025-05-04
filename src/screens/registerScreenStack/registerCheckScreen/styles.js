@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     textAlign: 'center',
-    fontSize: Theme.responsiveSize.size34,
+    fontSize: Theme.responsiveSize.size32,
     fontFamily: Theme.fonts.fontSansBold,
     color: Theme.colors.textColor1,
     marginBottom: Theme.responsiveSize.size24,

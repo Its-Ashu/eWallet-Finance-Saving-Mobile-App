@@ -4,6 +4,7 @@ export const AUTH_STACK_NAVIGATION = 'AuthStackNavigation';
 export const REGISTER_SCREEN_STACK = 'RegisterScreenStack';
 export const BOTTOM_TAB_NAVIGATION = 'BottomTabNavigation';
 export const HOME_SCREEN_STACK = 'HomeScreenStack';
+export const SCREEN_STACK_NAVIGATION = 'ScreenStackNavigation';
 
 //OnBoarding Screens
 export const ONBOARDING_HOME_SCREEN = 'OnboardingHomeScreen';

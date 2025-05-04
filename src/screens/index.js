@@ -22,6 +22,8 @@ import {
   ActivityScreen,
   ProfileScreen,
 } from './bottomStack';
+import {VerifyIdentityScreen1} from './screenStackNavigation';
+
 export {
   OnboardingHomeScreen,
   OnboardingWelcomeScreen,
@@ -41,4 +43,5 @@ export {
   AddScreen,
   ActivityScreen,
   ProfileScreen,
+  VerifyIdentityScreen1,
 };
