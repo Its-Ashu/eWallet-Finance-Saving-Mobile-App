@@ -22,7 +22,12 @@ import {
   ActivityScreen,
   ProfileScreen,
 } from './bottomStack';
-import {VerifyIdentityScreen1} from './screenStackNavigation';
+import {
+  VerifyIdentityScreen1,
+  PassportCameraScreen,
+  PassportCheckScreen,
+  SelfieCameraScreen,
+} from './screenStackNavigation';
 
 export {
   OnboardingHomeScreen,
@@ -44,4 +49,7 @@ export {
   ActivityScreen,
   ProfileScreen,
   VerifyIdentityScreen1,
+  PassportCameraScreen,
+  SelfieCameraScreen,
+  PassportCheckScreen,
 };

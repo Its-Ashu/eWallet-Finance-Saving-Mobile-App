@@ -25,7 +25,7 @@ const RegisterScreenStack = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.REGISTER_FACEID_SCREEN}>
+      <Stack.Navigator initialRouteName={Constants.REGISTER_SCREEN}>
         <Stack.Screen
           name={Constants.REGISTER_SCREEN}
           component={RegisterScreen}

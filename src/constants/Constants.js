@@ -3,7 +3,6 @@
 export const AUTH_STACK_NAVIGATION = 'AuthStackNavigation';
 export const REGISTER_SCREEN_STACK = 'RegisterScreenStack';
 export const BOTTOM_TAB_NAVIGATION = 'BottomTabNavigation';
-export const HOME_SCREEN_STACK = 'HomeScreenStack';
 export const SCREEN_STACK_NAVIGATION = 'ScreenStackNavigation';
 
 //OnBoarding Screens
@@ -36,4 +35,6 @@ export const PROFILE_SCREEN = 'ProfileScreen';
 
 //Home Screen stack
 export const VERIFY_IDENTITY_SCREEN_1 = 'VerifyIdentityScreen1';
+export const PASSPORT_CAMERA_SCREEN = 'PassportCameraScreen';
 export const PASSPORT_CHECK_SCREEN = 'PassportCheckScreen';
+export const SELFIE_CAMERA_SCREEN = 'SelfieCameraScreen';

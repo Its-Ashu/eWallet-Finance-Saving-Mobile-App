@@ -6,6 +6,7 @@ import styles from './styles';
 const Button = props => {
   return (
     <TouchableOpacity
+      disabled={props.disabled}
       activeOpacity={0.8}
       style={[styles.viewMain, props.viewMain]}
       onPress={props.onPress}>

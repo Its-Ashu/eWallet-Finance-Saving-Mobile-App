@@ -14,10 +14,10 @@ import {Constants} from '../constants';
 import {
   ActivityScreen,
   AddScreen,
+  HomeScreen,
   ProfileScreen,
   SearchScreen,
 } from '../screens';
-import HomeScreenStack from './HomeScreenStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -60,18 +60,18 @@ const BottomTabNavigation = props => {
       />
       <SafeAreaView style={styles.mainContainer}>
         <Tab.Navigator
-          initialRouteName={Constants.HOME_SCREEN_STACK}
+          initialRouteName={Constants.HOME_SCREEN}
           screenOptions={({navigation, route}) => ({})}>
           <Tab.Screen
-            name={Constants.HOME_SCREEN_STACK}
-            component={HomeScreenStack}
+            name={Constants.HOME_SCREEN}
+            component={HomeScreen}
             options={{
               tabBarLabel: '',
               headerShown: false,
               tabBarStyle: {
                 position: 'absolute',
-                paddingTop: Theme.responsiveSize.size12,
-                height: Theme.responsiveSize.size50,
+                paddingTop: Theme.responsiveSize.size18,
+                height: Theme.responsiveSize.size60,
                 elevation: 0, // Remove shadow on Android
                 shadowOpacity: 0, // Remove shadow on iOS
                 borderTopWidth: 0, // Remove default border
@@ -101,8 +101,8 @@ const BottomTabNavigation = props => {
               tabBarInactiveTintColor: Theme.colors.tabBarColor2,
               tabBarStyle: {
                 position: 'absolute',
-                paddingTop: Theme.responsiveSize.size12,
-                height: Theme.responsiveSize.size50,
+                paddingTop: Theme.responsiveSize.size18,
+                height: Theme.responsiveSize.size60,
                 elevation: 0, // Remove shadow on Android
                 shadowOpacity: 0, // Remove shadow on iOS
                 borderTopWidth: 0, // Remove default border
@@ -131,8 +131,8 @@ const BottomTabNavigation = props => {
               tabBarInactiveTintColor: Theme.colors.tabBarColor2,
               tabBarStyle: {
                 position: 'absolute',
-                paddingTop: Theme.responsiveSize.size12,
-                height: Theme.responsiveSize.size50,
+                paddingTop: Theme.responsiveSize.size18,
+                height: Theme.responsiveSize.size60,
                 elevation: 0, // Remove shadow on Android
                 shadowOpacity: 0, // Remove shadow on iOS
                 borderTopWidth: 0, // Remove default border
@@ -161,8 +161,8 @@ const BottomTabNavigation = props => {
               tabBarInactiveTintColor: Theme.colors.tabBarColor2,
               tabBarStyle: {
                 position: 'absolute',
-                paddingTop: Theme.responsiveSize.size12,
-                height: Theme.responsiveSize.size50,
+                paddingTop: Theme.responsiveSize.size18,
+                height: Theme.responsiveSize.size60,
                 elevation: 0, // Remove shadow on Android
                 shadowOpacity: 0, // Remove shadow on iOS
                 borderTopWidth: 0, // Remove default border
@@ -191,8 +191,8 @@ const BottomTabNavigation = props => {
               tabBarInactiveTintColor: Theme.colors.tabBarColor2,
               tabBarStyle: {
                 position: 'absolute',
-                paddingTop: Theme.responsiveSize.size12,
-                height: Theme.responsiveSize.size50,
+                paddingTop: Theme.responsiveSize.size18,
+                height: Theme.responsiveSize.size60,
                 elevation: 0, // Remove shadow on Android
                 shadowOpacity: 0, // Remove shadow on iOS
                 borderTopWidth: 0, // Remove default border

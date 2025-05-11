@@ -117,10 +117,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size20,
     paddingTop: Theme.responsiveSize.size40,
   },
-  draggableIcon: {
+  backdrop: {
+    flex: 1,
+    backgroundColor: Theme.colors.bgColor8,
+  },
+  sheetContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    height: '90%',
+    backgroundColor: '#fff',
+    borderTopLeftRadius: Theme.responsiveSize.size40,
+    borderTopRightRadius: Theme.responsiveSize.size40,
+  },
+  viewDraggable: {
+    position: 'absolute',
     zIndex: 1,
     alignSelf: 'center',
-    marginBottom: -Theme.responsiveSize.size12,
+    top: -Theme.responsiveSize.size12,
+  },
+  draggableIcon: {
     width: Theme.responsiveSize.size200,
     height: Theme.responsiveSize.size25,
   },

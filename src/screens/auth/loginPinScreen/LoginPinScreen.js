@@ -94,7 +94,7 @@ const LoginPinScreen = props => {
             }}
             title={'Continue'}
             onPress={() => {
-              props.navigation.navigate(Constants.BOTTOM_TAB_NAVIGATION);
+              props.navigation.navigate(Constants.SCREEN_STACK_NAVIGATION);
             }}
           />
         </View>

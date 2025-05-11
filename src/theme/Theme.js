@@ -24,6 +24,10 @@ export default Theme = {
     bgColor10: '#DFD4F9',
     bgColor11: '#E1E3FF',
     bgColor12: '#0047FF1A',
+    bgColor13: '#CFCFDB',
+    bgColor14: '#12033A1A',
+    bgColor15: '#04BE7B1A',
+    bgColor16: '#040415b9',
 
     borderColor1: '#12033A',
     borderColor2: '#ffffff',
@@ -40,7 +44,7 @@ export default Theme = {
     textColor7: '#0047FF',
     textColor8: '#686873',
     textColor9: '#ffffff66',
-    textColor10: '#ffffffcc',
+    textColor10: '#FFFFFFCC',
     textColor11: '#ffffff1a',
     textColor12: '#12033A66',
     textColor13: '#12033ACC',
@@ -66,11 +70,13 @@ export default Theme = {
     Minus_Icon: require('../resources/ic_minus_icon.png'),
     Map_Image: require('../resources/im_map.png'),
     Star_Icon: require('../resources/ic_star_icon.png'),
+    Fire_Icon: require('../resources/ic_fire_icon.png'),
     Scan_Icon: require('../resources/ic_scan_icon.png'),
     Info_Icon: require('../resources/ic_info_icon.png'),
     Card_Icon: require('../resources/ic_card_icon.png'),
     Circles_Icon: require('../resources/ic_circles_icon.png'),
     Copy_Icon: require('../resources/ic_copy_icon.png'),
+    True_Icon: require('../resources/ic_true_icon.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),

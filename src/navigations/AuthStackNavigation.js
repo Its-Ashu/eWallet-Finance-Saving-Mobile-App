@@ -10,7 +10,7 @@ import {
 } from '../screens';
 import {Constants} from '../constants';
 import RegisterScreenStack from './RegisterScreenStack';
-import BottomTabNavigation from './BottomTabNavigation';
+import ScreenStackNavigation from './ScreenStackNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +22,7 @@ const AuthStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.REGISTER_SCREEN_STACK}>
+      <Stack.Navigator initialRouteName={Constants.SCREEN_STACK_NAVIGATION}>
         <Stack.Screen
           name={Constants.ONBOARDING_HOME_SCREEN}
           component={OnboardingHomeScreen}
@@ -49,8 +49,8 @@ const AuthStackNavigation = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name={Constants.BOTTOM_TAB_NAVIGATION}
-          component={BottomTabNavigation}
+          name={Constants.SCREEN_STACK_NAVIGATION}
+          component={ScreenStackNavigation}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

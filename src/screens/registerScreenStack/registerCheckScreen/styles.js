@@ -40,14 +40,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     marginVertical: Theme.responsiveSize.size20,
   },
+
   //Modal Styles
   modalContainer: {
     flex: 1,
-    paddingHorizontal: Theme.responsiveSize.size22,
+    paddingHorizontal: Theme.responsiveSize.size20,
     backgroundColor: Theme.colors.bgColor8,
     alignItems: 'center',
   },
   modalContent: {
+    width: '100%',
     position: 'absolute',
     bottom: Theme.responsiveSize.size22,
     backgroundColor: Theme.colors.bgColor2,

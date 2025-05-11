@@ -1,8 +1,11 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {
+  Animated,
   Dimensions,
   FlatList,
   Image,
+  Modal,
+  PanResponder,
   SafeAreaView,
   StatusBar,
   Text,
@@ -12,7 +15,6 @@ import {
 } from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import RBSheet from 'react-native-raw-bottom-sheet';
 import {Button} from '../../../components/Button';
 import {ProgressBar} from '../../../components/ProgressBar';
 import {CountryItem} from '../../../components/RegisterItem';
@@ -21,14 +23,67 @@ import Theme from '../../../theme/Theme';
 import styles from './styles';
 
 const {height} = Dimensions.get('window');
+const SHEET_HEIGHT = height * 0.6;
 
 const RegisterScreen = props => {
-  //All States
-  //Main States
   const [listOfCountry, setListOfCountry] = useState([]);
   const [mobileNo, setMobileNo] = useState('');
   const [search, setSearch] = useState('');
-  const refRBSheet = useRef();
+  const [visible, setVisible] = useState(false);
+
+  const translateY = useRef(new Animated.Value(SHEET_HEIGHT)).current;
+
+  const openSheet = () => {
+    translateY.setValue(SHEET_HEIGHT); // Ensure it starts off-screen
+    setVisible(true);
+    Animated.timing(translateY, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const closeSheet = () => {
+    Animated.timing(translateY, {
+      toValue: SHEET_HEIGHT,
+      duration: 300,
+      useNativeDriver: true,
+    }).start(() => {
+      setVisible(false);
+    });
+  };
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => true,
+
+      onPanResponderMove: (evt, gestureState) => {
+        if (gestureState.dy > 0) {
+          translateY.setValue(gestureState.dy);
+        }
+      },
+
+      onPanResponderRelease: (evt, gestureState) => {
+        const shouldClose = gestureState.dy > 100;
+
+        if (shouldClose) {
+          Animated.timing(translateY, {
+            toValue: SHEET_HEIGHT,
+            duration: 200,
+            useNativeDriver: true,
+          }).start(() => {
+            setVisible(false);
+          });
+        } else {
+          Animated.spring(translateY, {
+            toValue: 0,
+            useNativeDriver: true,
+          }).start();
+        }
+      },
+    }),
+  ).current;
 
   useEffect(() => {
     doGetData();
@@ -82,9 +137,7 @@ const RegisterScreen = props => {
               </View>
               <View style={{flex: 1}}>
                 <View style={styles.viewTextInput}>
-                  <TouchableOpacity
-                    style={styles.viewRow}
-                    onPress={() => refRBSheet.current.open()}>
+                  <TouchableOpacity style={styles.viewRow} onPress={openSheet}>
                     <Image
                       style={styles.flagIcon}
                       source={Theme.icons.Flag_Icon}
@@ -155,54 +208,54 @@ const RegisterScreen = props => {
               </View>
             </KeyboardAwareScrollView>
           </View>
-          <RBSheet
-            ref={refRBSheet}
-            useNativeDriver={false}
-            customStyles={{
-              wrapper: {
-                backgroundColor: '#04041599',
-              },
-              container: {
-                backgroundColor: 'transparent',
-                height: height - Theme.responsiveSize.size50,
-              },
-            }}
-            customModalProps={{
-              animationType: 'slide',
-              statusBarTranslucent: true,
-            }}
-            customAvoidingViewProps={{
-              enabled: false,
-            }}>
-            <Image
-              style={styles.draggableIcon}
-              source={Theme.icons.Draggable_Icon}
+          <Modal transparent visible={visible} animationType="none">
+            <TouchableOpacity
+              activeOpacity={1}
+              onPress={closeSheet}
+              style={styles.backdrop}
             />
-            <View style={styles.viewMain}>
-              <View style={styles.viewRow}>
-                <View style={styles.viewSearchTextInput}>
-                  <Image
-                    style={styles.searchIcon}
-                    source={Theme.icons.Search_Icon}
-                  />
-                  <TextInput
-                    placeholderTextColor={Theme.colors.textColor4}
-                    placeholder={'Country'}
-                    value={search}
-                    onChangeText={setSearch}
-                    style={styles.textInputSearch}
-                  />
+
+            <Animated.View
+              style={[styles.sheetContainer, {transform: [{translateY}]}]}
+              {...panResponder.panHandlers}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.viewDraggable}
+                onPress={closeSheet}>
+                <Image
+                  style={styles.draggableIcon}
+                  source={Theme.icons.Draggable_Icon}
+                />
+              </TouchableOpacity>
+              <View style={styles.viewMain}>
+                <View style={styles.viewRow}>
+                  <View style={styles.viewSearchTextInput}>
+                    <Image
+                      style={styles.searchIcon}
+                      source={Theme.icons.Search_Icon}
+                    />
+                    <TextInput
+                      placeholderTextColor={Theme.colors.textColor4}
+                      placeholder={'Country'}
+                      value={search}
+                      onChangeText={setSearch}
+                      style={styles.textInputSearch}
+                    />
+                  </View>
+                  <Text style={styles.textCancel} onPress={closeSheet}>
+                    {'Cancel'}
+                  </Text>
                 </View>
-                <Text style={styles.textCancel}>{'Cancel'}</Text>
+                <FlatList
+                  data={listOfCountry}
+                  renderItem={renderItem}
+                  keyExtractor={(item, index) => index.toString()}
+                  showsVerticalScrollIndicator={false}
+                  contentContainerStyle={{paddingBottom: 50}}
+                />
               </View>
-              <FlatList
-                data={listOfCountry}
-                renderItem={renderItem}
-                keyExtractor={(i, index) => (index + 1).toString()}
-                showsVerticalScrollIndicator={false}
-              />
-            </View>
-          </RBSheet>
+            </Animated.View>
+          </Modal>
         </SafeAreaView>
       </GestureHandlerRootView>
     </>

@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     fontSize: Theme.responsiveSize.size32,
     fontFamily: Theme.fonts.fontSansBold,
     color: Theme.colors.textColor2,
-    letterSpacing: -1,
   },
   viewRow: {
     flexDirection: 'row',
@@ -36,6 +35,7 @@ const styles = StyleSheet.create({
     marginTop: Theme.responsiveSize.size08,
   },
   textSubTitle: {
+    opacity: 0.7,
     fontSize: Theme.responsiveSize.size16,
     fontFamily: Theme.fonts.fontSansMedium,
     color: Theme.colors.textColor10,
@@ -150,6 +150,78 @@ const styles = StyleSheet.create({
   copyIcon: {
     height: Theme.responsiveSize.size22,
     width: Theme.responsiveSize.size22,
+  },
+  viewTotalEarned: {
+    backgroundColor: Theme.colors.bgColor9,
+    borderRadius: Theme.responsiveSize.size38,
+    padding: Theme.responsiveSize.size22,
+    paddingHorizontal: Theme.responsiveSize.size26,
+    marginVertical: Theme.responsiveSize.size24,
+  },
+  viewRowTotal: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  textTotalEarned: {
+    flex: 1,
+    fontSize: Theme.responsiveSize.size16,
+    fontFamily: Theme.fonts.fontSansBold,
+    color: Theme.colors.textColor1,
+  },
+  textDate: {
+    fontSize: Theme.responsiveSize.size14,
+    fontFamily: Theme.fonts.fontSansMedium,
+    color: Theme.colors.textColor1,
+  },
+  viewChartMain: {
+    marginVertical: Theme.responsiveSize.size16,
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  dateRange: {
+    color: 'gray',
+  },
+  labels: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 12,
+  },
+  monthLabel: {
+    fontSize: 12,
+    color: '#6B7280',
+  },
+  tooltipContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    alignItems: 'center',
+    zIndex: 10,
+    marginLeft: -Theme.responsiveSize.size07,
+  },
+  tooltipText: {
+    backgroundColor: Theme.colors.textColor7,
+    color: Theme.colors.textColor2,
+    paddingHorizontal: Theme.responsiveSize.size10,
+    paddingVertical: Theme.responsiveSize.size04,
+    borderRadius: 12,
+    fontSize: Theme.responsiveSize.size12,
+    fontFamily: Theme.fonts.fontSansMedium,
+    lineHeight: Theme.responsiveSize.size22,
+    marginBottom: Theme.responsiveSize.size05,
+  },
+  tooltipDot: {
+    width: Theme.responsiveSize.size12,
+    height: Theme.responsiveSize.size12,
+    borderRadius: Theme.responsiveSize.size12,
+    backgroundColor: Theme.colors.bgColor4,
+    borderColor: Theme.colors.bgColor2,
+    borderWidth: Theme.responsiveSize.size02,
+  },
+  viewButton: {
+    marginHorizontal: 0,
+    marginTop: Theme.responsiveSize.size06,
   },
 });
 
