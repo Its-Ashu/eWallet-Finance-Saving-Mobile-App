@@ -21,7 +21,7 @@ const ScreenStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.BOTTOM_TAB_NAVIGATION}>
+      <Stack.Navigator initialRouteName={Constants.SELFIE_CAMERA_SCREEN}>
         <Stack.Screen
           name={Constants.BOTTOM_TAB_NAVIGATION}
           component={BottomTabNavigation}

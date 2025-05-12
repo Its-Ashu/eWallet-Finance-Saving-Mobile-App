@@ -28,6 +28,9 @@ export default Theme = {
     bgColor14: '#12033A1A',
     bgColor15: '#04BE7B1A',
     bgColor16: '#040415b9',
+    bgColor17: '#D8FFF1',
+    bgColor18: '#FEDEE8',
+    bgColor19: '#0047FF33',
 
     borderColor1: '#12033A',
     borderColor2: '#ffffff',
@@ -48,6 +51,10 @@ export default Theme = {
     textColor11: '#ffffff1a',
     textColor12: '#12033A66',
     textColor13: '#12033ACC',
+    textColor14: '#12033A1A',
+    textColor15: '#04BE7B',
+    textColor16: '#FF619A',
+    textColor17: '#040415CC',
   },
   icons: {
     Start_Investing_Icon: require('../resources/ic_start_investing.png'),
@@ -77,6 +84,8 @@ export default Theme = {
     Circles_Icon: require('../resources/ic_circles_icon.png'),
     Copy_Icon: require('../resources/ic_copy_icon.png'),
     True_Icon: require('../resources/ic_true_icon.png'),
+    Graph_Image: require('../resources/ic_graph.png'),
+    Diamond_Icon: require('../resources/ic_diamond_icon.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),
