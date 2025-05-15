@@ -31,6 +31,7 @@ export default Theme = {
     bgColor17: '#D8FFF1',
     bgColor18: '#FEDEE8',
     bgColor19: '#0047FF33',
+    bgColor20: '#12033ACC',
 
     borderColor1: '#12033A',
     borderColor2: '#ffffff',
@@ -86,12 +87,13 @@ export default Theme = {
     True_Icon: require('../resources/ic_true_icon.png'),
     Graph_Image: require('../resources/ic_graph.png'),
     Diamond_Icon: require('../resources/ic_diamond_icon.png'),
+    Game_Bar_Icon: require('../resources/ic_game_bar.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),
     Home_Bold_Icon: require('../resources/ic_home_bold.png'),
     Plus_White_Icon: require('../resources/ic_plus_white.png'),
-    Search_Icon: require('../resources/ic_search.png'),
+    Search_Tab_Icon: require('../resources/ic_search.png'),
     Search_Bold_Icon: require('../resources/ic_search_bold.png'),
     Activity_Icon: require('../resources/ic_activity.png'),
     Activity_Bold_Icon: require('../resources/ic_activity_bold.png'),

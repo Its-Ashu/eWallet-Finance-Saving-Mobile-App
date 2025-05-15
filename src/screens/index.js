@@ -27,6 +27,7 @@ import {
   PassportCameraScreen,
   PassportCheckScreen,
   SelfieCameraScreen,
+  ExploreMoreScreen,
 } from './screenStackNavigation';
 
 export {
@@ -52,4 +53,5 @@ export {
   PassportCameraScreen,
   SelfieCameraScreen,
   PassportCheckScreen,
+  ExploreMoreScreen,
 };

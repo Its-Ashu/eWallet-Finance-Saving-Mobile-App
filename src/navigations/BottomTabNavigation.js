@@ -18,6 +18,7 @@ import {
   ProfileScreen,
   SearchScreen,
 } from '../screens';
+import HomeScreenStack from './HomeScreenStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +28,9 @@ const BottomTabNavigation = props => {
     if (name === Constants.HOME_SCREEN) {
       source = focused ? Theme.icons.Home_Bold_Icon : Theme.icons.Home_Icon;
     } else if (name === Constants.SEARCH_SCREEN) {
-      source = focused ? Theme.icons.Search_Bold_Icon : Theme.icons.Search_Icon;
+      source = focused
+        ? Theme.icons.Search_Bold_Icon
+        : Theme.icons.Search_Tab_Icon;
     } else if (name === Constants.ADD_SCREEN) {
       source = Theme.icons.Plus_White_Icon;
     } else if (name === Constants.ACTIVITY_SCREEN) {
@@ -60,11 +63,11 @@ const BottomTabNavigation = props => {
       />
       <SafeAreaView style={styles.mainContainer}>
         <Tab.Navigator
-          initialRouteName={Constants.HOME_SCREEN}
+          initialRouteName={Constants.HOME_SCREEN_STACK}
           screenOptions={({navigation, route}) => ({})}>
           <Tab.Screen
-            name={Constants.HOME_SCREEN}
-            component={HomeScreen}
+            name={Constants.HOME_SCREEN_STACK}
+            component={HomeScreenStack}
             options={{
               tabBarLabel: '',
               headerShown: false,

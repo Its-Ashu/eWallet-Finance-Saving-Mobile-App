@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   appImage: {
     position: 'absolute',
-    height: width + Theme.responsiveSize.size48,
+    height: width + Theme.responsiveSize.size50,
     width: width,
   },
   viewTop: {

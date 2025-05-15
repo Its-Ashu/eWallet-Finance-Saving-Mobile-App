@@ -119,7 +119,7 @@ const HomeScreen = props => {
             style={{flex: 1, marginBottom: Theme.responsiveSize.size50}}>
             <Image
               style={styles.appImage}
-              resizeMode={'contain'}
+              resizeMode={'cover'}
               source={Theme.icons.Top_View_BG}
             />
             <View style={styles.viewTop}>
@@ -158,7 +158,11 @@ const HomeScreen = props => {
                       viewStyle={{backgroundColor: Theme.colors.bgColor1}}
                       viewMain={styles.viewButton}
                       title={'Explore more'}
-                      onPress={() => {}}
+                      onPress={() => {
+                        props.navigation.navigate(Constants.HOME_SCREEN_STACK, {
+                          screen: Constants.EXPLORE_MORE_SCREEN,
+                        });
+                      }}
                     />
                   </View>
                   <FlatList

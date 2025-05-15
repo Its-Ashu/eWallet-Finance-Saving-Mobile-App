@@ -5,11 +5,13 @@ import {Constants} from '../constants';
 import Theme from '../theme/Theme';
 import BottomTabNavigation from './BottomTabNavigation';
 import {
+  ExploreMoreScreen,
   PassportCameraScreen,
   PassportCheckScreen,
   SelfieCameraScreen,
   VerifyIdentityScreen1,
 } from '../screens';
+import HomeScreenStack from './HomeScreenStack';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +23,7 @@ const ScreenStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.SELFIE_CAMERA_SCREEN}>
+      <Stack.Navigator initialRouteName={Constants.BOTTOM_TAB_NAVIGATION}>
         <Stack.Screen
           name={Constants.BOTTOM_TAB_NAVIGATION}
           component={BottomTabNavigation}
