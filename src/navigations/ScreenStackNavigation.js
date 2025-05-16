@@ -49,6 +49,11 @@ const ScreenStackNavigation = () => {
           component={SelfieCameraScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name={Constants.HOME_SCREEN_STACK}
+          component={HomeScreenStack}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </>
   );

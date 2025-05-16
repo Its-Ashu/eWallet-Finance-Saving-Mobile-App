@@ -14,7 +14,6 @@ import {Constants} from '../constants';
 import {
   ActivityScreen,
   AddScreen,
-  HomeScreen,
   ProfileScreen,
   SearchScreen,
 } from '../screens';

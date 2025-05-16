@@ -25,7 +25,8 @@ const SearchScreen = props => {
             <Text style={styles.textTitle}>{'Recent activity'}</Text>
           </View>
           <ScrollView
-            style={{flex: 1, marginBottom: Theme.responsiveSize.size50}}>
+            style={{flex: 1, marginBottom: Theme.responsiveSize.size50}}
+            showsVerticalScrollIndicator={false}>
             <View>
               <Text style={styles.textDay}>{'Today'}</Text>
               <View style={{marginVertical: Theme.responsiveSize.size16}}>

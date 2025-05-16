@@ -12,65 +12,75 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Theme.colors.bgColor2,
-    paddingHorizontal: Theme.responsiveSize.size20,
   },
-  cameraPreview: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: -1,
-    borderRadius: Theme.responsiveSize.size10,
+  viewRisk: {
+    backgroundColor: Theme.colors.bgColor2,
+    borderColor: Theme.colors.bgColor14,
+    borderWidth: Theme.responsiveSize.size01,
+    borderRadius: Theme.responsiveSize.size14,
+    paddingHorizontal: Theme.responsiveSize.size22,
+    paddingVertical: Theme.responsiveSize.size14,
+    marginRight: Theme.responsiveSize.size08,
   },
-  viewHeader: {
-    position: 'absolute',
-    top: Theme.responsiveSize.size20,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: Theme.responsiveSize.size20,
-    zIndex: 10,
+  textRisk: {
+    fontSize: Theme.responsiveSize.size14,
+    fontFamily: Theme.fonts.fontSansMedium,
+    color: Theme.colors.textColor1,
   },
-  textHeaderTitle: {
-    fontSize: Theme.responsiveSize.size18,
+  textAmount: {
+    textAlign: 'center',
+    fontSize: Theme.responsiveSize.size34,
     fontFamily: Theme.fonts.fontSansBold,
     color: Theme.colors.textColor1,
   },
-  viewCameraOverlay: {
-    position: 'absolute',
-    top: '30%',
-    width: '100%',
+  viewRow: {
+    flexDirection: 'row',
     alignItems: 'center',
-    zIndex: 5,
   },
-  viewCameraFrame: {
-    width: Theme.responsiveSize.size280,
-    height: Theme.responsiveSize.size180,
-    borderWidth: 2,
-    borderColor: '#fff',
-    borderRadius: Theme.responsiveSize.size20,
-    backgroundColor: 'rgba(255,255,255,0.1)',
+  textLowRisk: {
+    fontSize: Theme.responsiveSize.size16,
+    fontFamily: Theme.fonts.fontSansMedium,
+    color: Theme.colors.textColor13,
+    marginRight: Theme.responsiveSize.size06,
   },
-  textSubtitle: {
-    color: '#fff',
+  iconInfo: {
+    height: Theme.responsiveSize.size22,
+    width: Theme.responsiveSize.size22,
+  },
+  viewTotalEarned: {
+    backgroundColor: Theme.colors.bgColor9,
+    borderRadius: Theme.responsiveSize.size38,
+    padding: Theme.responsiveSize.size22,
+    paddingHorizontal: Theme.responsiveSize.size26,
+    marginTop: Theme.responsiveSize.size34,
+    marginHorizontal: Theme.responsiveSize.size20,
+  },
+  viewRowTotal: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  textTotalEarned: {
+    flex: 1,
+    fontSize: Theme.responsiveSize.size16,
+    fontFamily: Theme.fonts.fontSansBold,
+    color: Theme.colors.textColor1,
+  },
+  textDate: {
     fontSize: Theme.responsiveSize.size14,
     fontFamily: Theme.fonts.fontSansMedium,
-    marginTop: Theme.responsiveSize.size10,
-    textAlign: 'center',
+    color: Theme.colors.textColor1,
   },
-  viewBottomControls: {
-    position: 'absolute',
-    bottom: Theme.responsiveSize.size30,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+  graphImage: {
+    height: width / 2,
+    width: width - Theme.responsiveSize.size100,
   },
-  viewCaptureButton: {
-    width: Theme.responsiveSize.size70,
-    height: Theme.responsiveSize.size70,
-    borderRadius: Theme.responsiveSize.size35,
-    borderWidth: 5,
-    borderColor: '#fff',
-    backgroundColor: 'transparent',
+  viewTracking: {
+    backgroundColor: Theme.colors.bgColor9,
+    borderRadius: Theme.responsiveSize.size38,
+    paddingVertical: Theme.responsiveSize.size30,
+    paddingHorizontal: Theme.responsiveSize.size26,
+    marginVertical: Theme.responsiveSize.size22,
+    marginHorizontal: Theme.responsiveSize.size20,
   },
 });
 

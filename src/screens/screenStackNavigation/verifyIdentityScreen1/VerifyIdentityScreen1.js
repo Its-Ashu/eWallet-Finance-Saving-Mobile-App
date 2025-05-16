@@ -276,10 +276,7 @@ activated in 3 business days`}
                 viewMain={styles.viewButton}
                 title={'Got it'}
                 onPress={() => {
-                  props.navigation.navigate(Constants.HOME_SCREEN_STACK, {
-                    // screen: Constants.HOME_SCREEN,
-                    params: {isVerified: true},
-                  });
+                  props.navigation.navigate(Constants.HOME_SCREEN_STACK);
                   setModalVisible(false);
                 }}
               />

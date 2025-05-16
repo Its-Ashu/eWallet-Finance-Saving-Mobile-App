@@ -56,6 +56,7 @@ export default Theme = {
     textColor15: '#04BE7B',
     textColor16: '#FF619A',
     textColor17: '#040415CC',
+    textColor18: '#12033a33',
   },
   icons: {
     Start_Investing_Icon: require('../resources/ic_start_investing.png'),
