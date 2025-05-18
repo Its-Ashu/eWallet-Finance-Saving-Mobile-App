@@ -23,7 +23,7 @@ const ScreenStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.BOTTOM_TAB_NAVIGATION}>
+      <Stack.Navigator initialRouteName={Constants.SELFIE_CAMERA_SCREEN}>
         <Stack.Screen
           name={Constants.BOTTOM_TAB_NAVIGATION}
           component={BottomTabNavigation}
@@ -47,11 +47,6 @@ const ScreenStackNavigation = () => {
         <Stack.Screen
           name={Constants.SELFIE_CAMERA_SCREEN}
           component={SelfieCameraScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name={Constants.HOME_SCREEN_STACK}
-          component={HomeScreenStack}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

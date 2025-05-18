@@ -22,7 +22,12 @@ const LinkAccount = props => {
         </Text>
       </View>
       <Button
-        viewStyle={{backgroundColor: Theme.colors.bgColor1}}
+        viewMain={{
+          marginHorizontal: 0,
+        }}
+        viewStyle={{
+          backgroundColor: Theme.colors.bgColor1,
+        }}
         title={props.buttonTitle}
         plusIcon={props.plusIcon}
         onPress={props.onPress}

@@ -4,6 +4,7 @@ export default Theme = {
   colors: {
     PrimaryColor: '#12033A',
     SecondaryColor: '#ffffff',
+    transparent: 'transparent',
 
     appColor: '#12033A',
     white: '#ffffff',
@@ -32,6 +33,11 @@ export default Theme = {
     bgColor18: '#FEDEE8',
     bgColor19: '#0047FF33',
     bgColor20: '#12033ACC',
+    bgColor21: '#B8CCFF',
+    bgColor22: '#6590FF',
+    bgColor23: '#F9F9F9',
+    bgColor24: '#CEEEFF',
+    bgColor25: '#9559F612',
 
     borderColor1: '#12033A',
     borderColor2: '#ffffff',
@@ -89,6 +95,15 @@ export default Theme = {
     Graph_Image: require('../resources/ic_graph.png'),
     Diamond_Icon: require('../resources/ic_diamond_icon.png'),
     Game_Bar_Icon: require('../resources/ic_game_bar.png'),
+    Game_Bar_Icon_2: require('../resources/ic_game_bar2.png'),
+    Edit_Icon: require('../resources/ic_edit_icon.png'),
+    Home3D_Icon: require('../resources/ic_home3D_icon.png'),
+    Rainy_Icon: require('../resources/ic_rainy_icon.png'),
+    Profile_Blue_Icon: require('../resources/ic_profile_icon.png'),
+    Privacy_Icon: require('../resources/ic_privacy_icon.png'),
+    Fire_Blue_Icon: require('../resources/ic_fire_blue_icon.png'),
+    Help_Icon: require('../resources/ic_help_icon.png'),
+    Logout_Icon: require('../resources/ic_logout_icon.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),
@@ -141,6 +156,7 @@ export default Theme = {
     size25: RFValue(25),
     size26: RFValue(26),
     size28: RFValue(28),
+    size29: RFValue(29),
     size30: RFValue(30),
     size32: RFValue(32),
     size34: RFValue(34),

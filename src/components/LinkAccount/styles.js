@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   viewAccountCard: {
     backgroundColor: Theme.colors.bgColor9,
     borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size22,
+    padding: Theme.responsiveSize.size26,
     marginVertical: Theme.responsiveSize.size24,
     marginHorizontal: Theme.responsiveSize.size20,
   },

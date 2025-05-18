@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     borderRadius: Theme.responsiveSize.size38,
     padding: Theme.responsiveSize.size12,
     paddingRight: Theme.responsiveSize.size26,
-    marginBottom: Theme.responsiveSize.size40,
+    marginBottom: Theme.responsiveSize.size100,
     marginHorizontal: Theme.responsiveSize.size20,
   },
   viewCircles: {
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
     minWidth: width / 3.1,
     backgroundColor: Theme.colors.bgColor9,
     borderRadius: Theme.responsiveSize.size22,
-    padding: Theme.responsiveSize.size14,
+    padding: Theme.responsiveSize.size16,
     marginRight: Theme.responsiveSize.size08,
   },
   textRecentSubTitle: {
@@ -267,6 +267,7 @@ const styles = StyleSheet.create({
     fontFamily: Theme.fonts.fontSansBold,
     color: Theme.colors.textColor1,
     paddingTop: Theme.responsiveSize.size16,
+    lineHeight: Theme.responsiveSize.size22,
   },
   viewRecentActivityPrice: {
     alignSelf: 'flex-start',
@@ -274,12 +275,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size08,
     paddingVertical: Theme.responsiveSize.size04,
     borderRadius: Theme.responsiveSize.size10,
-    marginTop: Theme.responsiveSize.size10,
+    marginTop: Theme.responsiveSize.size12,
   },
   textPriceRecentActivity: {
     fontSize: Theme.responsiveSize.size12,
     fontFamily: Theme.fonts.fontSansMedium,
     color: Theme.colors.textColor1,
+    lineHeight: Theme.responsiveSize.size22,
   },
   viewRecentButton: {
     marginTop: Theme.responsiveSize.size08,

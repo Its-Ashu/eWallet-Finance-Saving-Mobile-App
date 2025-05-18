@@ -22,7 +22,7 @@ const HomeScreen = props => {
   const [listOfRecentActivity, setListOfRecentActivity] = useState([]);
   //Main States
   const route = useRoute();
-  const {isVerified} = route.params || {};
+  const isVerified = route.params?.isVerified;
 
   useEffect(() => {
     doGetData();
@@ -115,8 +115,7 @@ const HomeScreen = props => {
       />
       <SafeAreaView style={styles.viewMainContainer}>
         <View style={styles.container}>
-          <ScrollView
-            style={{flex: 1, marginBottom: Theme.responsiveSize.size50}}>
+          <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
             <Image
               style={styles.appImage}
               resizeMode={'cover'}

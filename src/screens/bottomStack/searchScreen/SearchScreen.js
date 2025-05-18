@@ -24,10 +24,8 @@ const SearchScreen = props => {
             </TouchableOpacity>
             <Text style={styles.textTitle}>{'Recent activity'}</Text>
           </View>
-          <ScrollView
-            style={{flex: 1, marginBottom: Theme.responsiveSize.size50}}
-            showsVerticalScrollIndicator={false}>
-            <View>
+          <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+            <View style={{marginBottom: Theme.responsiveSize.size80}}>
               <Text style={styles.textDay}>{'Today'}</Text>
               <View style={{marginVertical: Theme.responsiveSize.size16}}>
                 <SearchItem
