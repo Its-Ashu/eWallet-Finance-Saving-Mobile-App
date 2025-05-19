@@ -12,6 +12,7 @@ import {
   VerifyIdentityScreen1,
 } from '../screens';
 import HomeScreenStack from './HomeScreenStack';
+import SavingScreenStack from './SavingScreenStack';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ const ScreenStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.SELFIE_CAMERA_SCREEN}>
+      <Stack.Navigator initialRouteName={Constants.SAVING_SCREEN_STACK}>
         <Stack.Screen
           name={Constants.BOTTOM_TAB_NAVIGATION}
           component={BottomTabNavigation}
@@ -47,6 +48,11 @@ const ScreenStackNavigation = () => {
         <Stack.Screen
           name={Constants.SELFIE_CAMERA_SCREEN}
           component={SelfieCameraScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.SAVING_SCREEN_STACK}
+          component={SavingScreenStack}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

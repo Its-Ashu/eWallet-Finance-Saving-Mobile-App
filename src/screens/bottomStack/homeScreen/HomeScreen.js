@@ -280,7 +280,9 @@ const HomeScreen = props => {
                     subTitle={`Add funds for the things you want the most`}
                     plusIcon={false}
                     buttonTitle={'Top up'}
-                    onPress={() => {}}
+                    onPress={() => {
+                      props.navigation.navigate(Constants.SAVING_SCREEN_STACK);
+                    }}
                   />
                 </>
               ) : (

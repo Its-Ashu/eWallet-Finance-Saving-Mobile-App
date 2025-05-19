@@ -30,6 +30,8 @@ import {
   ExploreMoreScreen,
 } from './screenStackNavigation';
 
+import {SavingScreen, GoalCarouselScreen} from './savingScreenStack';
+
 export {
   OnboardingHomeScreen,
   OnboardingWelcomeScreen,
@@ -54,4 +56,6 @@ export {
   SelfieCameraScreen,
   PassportCheckScreen,
   ExploreMoreScreen,
+  SavingScreen,
+  GoalCarouselScreen,
 };
