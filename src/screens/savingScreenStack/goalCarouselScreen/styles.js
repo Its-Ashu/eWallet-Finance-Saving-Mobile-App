@@ -27,14 +27,15 @@ const styles = StyleSheet.create({
     fontFamily: Theme.fonts.fontSansBold,
     fontSize: Theme.responsiveSize.size32,
     lineHeight: Theme.responsiveSize.size34,
+    marginBottom: Theme.responsiveSize.size22,
   },
   cardContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   cardInner: {
-    width: '82%',
-    height: '90%',
+    width: '100%',
+    height: '100%',
     backgroundColor: Theme.colors.bgColor2,
     borderRadius: Theme.responsiveSize.size38,
     paddingTop: Theme.responsiveSize.size45,
@@ -75,11 +76,10 @@ const styles = StyleSheet.create({
     marginBottom: Theme.responsiveSize.size50,
   },
   dot: {
-    height: 8,
-    width: 8,
-    borderRadius: 4,
+    borderRadius: Theme.responsiveSize.size04,
+    height: Theme.responsiveSize.size07,
+    width: Theme.responsiveSize.size07,
     backgroundColor: Theme.colors.textColor1,
-    marginHorizontal: 4,
   },
 });
 

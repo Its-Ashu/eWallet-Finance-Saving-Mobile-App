@@ -106,6 +106,7 @@ export default Theme = {
     Fire_Blue_Icon: require('../resources/ic_fire_blue_icon.png'),
     Help_Icon: require('../resources/ic_help_icon.png'),
     Logout_Icon: require('../resources/ic_logout_icon.png'),
+    SMS_Icon: require('../resources/ic_sms_icon.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),
@@ -184,6 +185,7 @@ export default Theme = {
     size70: RFValue(70),
     size72: RFValue(72),
     size75: RFValue(75),
+    size78: RFValue(78),
     size80: RFValue(80),
     size85: RFValue(85),
     size88: RFValue(88),

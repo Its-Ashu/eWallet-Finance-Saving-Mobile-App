@@ -3,7 +3,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StatusBar} from 'react-native';
 import {Constants} from '../constants';
 import Theme from '../theme/Theme';
-import {GoalCarouselScreen, SavingScreen} from '../screens';
+import {
+  GoalCarouselScreen,
+  InvestLowFundScreen,
+  MonthlyInvestmentScreen,
+  SavingScreen,
+} from '../screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +29,16 @@ const SavingScreenStack = () => {
         <Stack.Screen
           name={Constants.GOAL_CAROUSEL_SCREEN}
           component={GoalCarouselScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.INVEST_LOW_FUND_SCREEN}
+          component={InvestLowFundScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.MONTHLY_INVESTMENT_SCREEN}
+          component={MonthlyInvestmentScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

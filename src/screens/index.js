@@ -30,7 +30,12 @@ import {
   ExploreMoreScreen,
 } from './screenStackNavigation';
 
-import {SavingScreen, GoalCarouselScreen} from './savingScreenStack';
+import {
+  SavingScreen,
+  GoalCarouselScreen,
+  InvestLowFundScreen,
+  MonthlyInvestmentScreen,
+} from './savingScreenStack';
 
 export {
   OnboardingHomeScreen,
@@ -58,4 +63,6 @@ export {
   ExploreMoreScreen,
   SavingScreen,
   GoalCarouselScreen,
+  InvestLowFundScreen,
+  MonthlyInvestmentScreen,
 };
