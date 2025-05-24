@@ -8,6 +8,7 @@ import {
   InvestLowFundScreen,
   MonthlyInvestmentScreen,
   SavingScreen,
+  SelectSimpleFundScreen,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -39,6 +40,11 @@ const SavingScreenStack = () => {
         <Stack.Screen
           name={Constants.MONTHLY_INVESTMENT_SCREEN}
           component={MonthlyInvestmentScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.SELECT_SIMPLE_FUND_SCREEN}
+          component={SelectSimpleFundScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

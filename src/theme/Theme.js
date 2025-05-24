@@ -107,6 +107,8 @@ export default Theme = {
     Help_Icon: require('../resources/ic_help_icon.png'),
     Logout_Icon: require('../resources/ic_logout_icon.png'),
     SMS_Icon: require('../resources/ic_sms_icon.png'),
+    Heart_Icon: require('../resources/ic_heart_icon.png'),
+    Puzzle_Icon: require('../resources/ic_puzzle_icon.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size20,
   },
   viewTop: {
-    marginVertical: Theme.responsiveSize.size32,
+    marginVertical: Theme.responsiveSize.size16,
   },
   textTitle: {
     textAlign: 'center',
@@ -48,35 +48,32 @@ const styles = StyleSheet.create({
     fontFamily: Theme.fonts.fontSansMedium,
     marginTop: -Theme.responsiveSize.size12,
   },
-  viewInvitation: {
+  viewRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Theme.colors.bgColor9,
-    borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size12,
-    paddingRight: Theme.responsiveSize.size26,
+    justifyContent: 'center',
+    marginVertical: Theme.responsiveSize.size14,
     marginTop: Theme.responsiveSize.size22,
   },
-  viewCircles: {
-    backgroundColor: Theme.colors.bgColor24,
-    borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size14,
+  viewWeekly: {
+    borderColor: Theme.colors.textColor14,
+    borderWidth: Theme.responsiveSize.size01,
+    paddingHorizontal: Theme.responsiveSize.size22,
+    paddingVertical: Theme.responsiveSize.size14,
+    borderRadius: Theme.responsiveSize.size14,
+    marginHorizontal: Theme.responsiveSize.size06,
   },
-  circleIcon: {
-    height: Theme.responsiveSize.size65,
-    width: Theme.responsiveSize.size65,
-  },
-  textInviteTitle: {
-    fontSize: Theme.responsiveSize.size16,
-    fontFamily: Theme.fonts.fontSansBold,
+  textWeekly: {
+    textAlign: 'center',
     color: Theme.colors.textColor1,
-    lineHeight: Theme.responsiveSize.size26,
-    marginLeft: Theme.responsiveSize.size22,
-    marginRight: Theme.responsiveSize.size06,
+    fontSize: Theme.responsiveSize.size14,
+    fontFamily: Theme.fonts.fontSansMedium,
   },
-  copyIcon: {
-    height: Theme.responsiveSize.size22,
-    width: Theme.responsiveSize.size22,
+  textDate: {
+    textAlign: 'center',
+    color: Theme.colors.textColor17,
+    fontSize: Theme.responsiveSize.size12 + 1,
+    fontFamily: Theme.fonts.fontSansMedium,
   },
 
   //Modal Styles

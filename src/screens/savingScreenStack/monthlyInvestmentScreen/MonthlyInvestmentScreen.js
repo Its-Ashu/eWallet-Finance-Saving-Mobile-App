@@ -1,13 +1,22 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StatusBar, Text, View, TextInput} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Button} from '../../../components/Button';
 import {ProgressBar} from '../../../components/ProgressBar';
+import {Constants} from '../../../constants';
 import Theme from '../../../theme/Theme';
 import styles from './styles';
 
 const MonthlyInvestmentScreen = props => {
   const [price, setPrice] = useState('20.00');
+  const [isSelected, setIsSelected] = useState(0);
 
   return (
     <>
@@ -45,6 +54,42 @@ investments`}
             <Text style={styles.textSubTitle}>
               {'Set amount of investments'}
             </Text>
+            <View style={styles.viewRow}>
+              <Pressable
+                style={[
+                  styles.viewWeekly,
+                  {
+                    borderColor:
+                      isSelected === 0
+                        ? Theme.colors.bgColor1
+                        : Theme.colors.textColor14,
+                  },
+                ]}
+                onPress={() => {
+                  setIsSelected(0);
+                }}>
+                <Text style={styles.textWeekly}>{'Weekly'}</Text>
+              </Pressable>
+              <Pressable
+                style={[
+                  styles.viewWeekly,
+                  {
+                    borderColor:
+                      isSelected === 1
+                        ? Theme.colors.bgColor1
+                        : Theme.colors.textColor14,
+                  },
+                ]}
+                onPress={() => {
+                  setIsSelected(1);
+                }}>
+                <Text style={styles.textWeekly}>{'Monthly'}</Text>
+              </Pressable>
+            </View>
+            <Text style={styles.textDate}>
+              {'Your monthly savings start from '}
+              <Text style={{color: Theme.colors.textColor7}}>{'13 Apr'}</Text>
+            </Text>
           </ScrollView>
           <Button
             title="Create your goal"
@@ -53,7 +98,9 @@ investments`}
               marginVertical: Theme.responsiveSize.size18,
             }}
             viewStyle={{backgroundColor: Theme.colors.bgColor4}}
-            onPress={() => {}}
+            onPress={() => {
+              props.navigation.navigate(Constants.SELECT_SIMPLE_FUND_SCREEN);
+            }}
           />
         </View>
       </SafeAreaView>

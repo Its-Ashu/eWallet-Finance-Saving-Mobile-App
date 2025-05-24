@@ -35,6 +35,7 @@ import {
   GoalCarouselScreen,
   InvestLowFundScreen,
   MonthlyInvestmentScreen,
+  SelectSimpleFundScreen,
 } from './savingScreenStack';
 
 export {
@@ -65,4 +66,5 @@ export {
   GoalCarouselScreen,
   InvestLowFundScreen,
   MonthlyInvestmentScreen,
+  SelectSimpleFundScreen,
 };
