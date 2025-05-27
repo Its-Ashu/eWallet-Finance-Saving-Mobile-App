@@ -5,77 +5,47 @@ const styles = StyleSheet.create({
   viewMainContainer: {
     height: '100%',
     width: '100%',
-    backgroundColor: Theme.colors.bgColor1,
+    backgroundColor: Theme.colors.bgColor2,
   },
   container: {
-    flex: 1,
+    height: '100%',
+    width: '100%',
     backgroundColor: Theme.colors.bgColor2,
     paddingHorizontal: Theme.responsiveSize.size20,
   },
-  viewTop: {
-    marginVertical: Theme.responsiveSize.size16,
-  },
-  textTitle: {
-    textAlign: 'center',
-    color: Theme.colors.textColor1,
-    marginTop: Theme.responsiveSize.size14,
-    fontSize: Theme.responsiveSize.size22,
-    fontFamily: Theme.fonts.fontSansBold,
-    lineHeight: Theme.responsiveSize.size32,
-  },
-  inputContainer: {
+  viewHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginVertical: Theme.responsiveSize.size20,
   },
-  dollarSign: {
-    color: Theme.colors.textColor1,
-    fontFamily: Theme.fonts.fontSansBold,
-    fontSize: Theme.responsiveSize.size32,
-    marginBottom: Theme.responsiveSize.size12,
-  },
-  textInput: {
-    color: Theme.colors.textColor1,
-    marginBottom: Theme.responsiveSize.size10,
-    fontSize: Theme.responsiveSize.size32,
-    fontFamily: Theme.fonts.fontSansBold,
-  },
-  textSubTitle: {
-    textAlign: 'center',
-    color: Theme.colors.textColor12,
-    fontSize: Theme.responsiveSize.size16,
-    fontFamily: Theme.fonts.fontSansMedium,
-    marginTop: -Theme.responsiveSize.size12,
-  },
-  viewInvitation: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Theme.colors.bgColor9,
-    borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size12,
-    paddingRight: Theme.responsiveSize.size26,
-    marginTop: Theme.responsiveSize.size22,
-  },
-  viewCircles: {
-    backgroundColor: Theme.colors.bgColor24,
-    borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size14,
-  },
-  circleIcon: {
-    height: Theme.responsiveSize.size65,
-    width: Theme.responsiveSize.size65,
-  },
-  textInviteTitle: {
-    fontSize: Theme.responsiveSize.size16,
-    fontFamily: Theme.fonts.fontSansBold,
-    color: Theme.colors.textColor1,
-    lineHeight: Theme.responsiveSize.size26,
-    marginLeft: Theme.responsiveSize.size22,
-    marginRight: Theme.responsiveSize.size06,
-  },
-  copyIcon: {
+  backIcon: {
     height: Theme.responsiveSize.size22,
     width: Theme.responsiveSize.size22,
+  },
+  textTitle: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: Theme.responsiveSize.size22,
+    fontFamily: Theme.fonts.fontSansBold,
+    color: Theme.colors.textColor1,
+    marginRight: Theme.responsiveSize.size22,
+  },
+  viewRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  textSubTitle: {
+    paddingHorizontal: Theme.responsiveSize.size20,
+    lineHeight: Theme.responsiveSize.size24,
+    marginTop: Theme.responsiveSize.size04,
+    fontSize: Theme.responsiveSize.size14,
+    fontFamily: Theme.fonts.fontSansMedium,
+    color: Theme.colors.textColor6,
+    letterSpacing: -0.3,
+    textAlign: 'center',
+  },
+  marginT24: {
+    marginTop: Theme.responsiveSize.size24,
   },
 
   //Modal Styles

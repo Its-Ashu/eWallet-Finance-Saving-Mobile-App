@@ -155,7 +155,7 @@ national identity card or passport photo`}
               position: 'absolute',
               zIndex: 1,
               alignSelf: 'center',
-              top: Theme.responsiveSize.size78,
+              top: Theme.responsiveSize.size62,
             }}
             progress={'100%'}
             onPressClose={() => {
@@ -197,18 +197,6 @@ and running`}
           transparent={true}
           visible={modalVisible2}
           statusBarTranslucent={true}>
-          <ProgressBar
-            viewMain={{
-              position: 'absolute',
-              zIndex: 1,
-              alignSelf: 'center',
-              top: Theme.responsiveSize.size78,
-            }}
-            progress={'100%'}
-            onPressClose={() => {
-              props.navigation.goBack();
-            }}
-          />
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
               <View style={styles.modalIconContainer}>
@@ -231,7 +219,7 @@ the goal at any time`}
                 viewMain={styles.viewButton}
                 title={'Got it'}
                 onPress={() => {
-                  setModalVisible2(false);
+                  props.navigation.navigate(Constants.TOPUP_SCREEN);
                 }}
               />
             </View>

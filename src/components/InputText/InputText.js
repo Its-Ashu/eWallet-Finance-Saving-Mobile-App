@@ -1,4 +1,4 @@
-import {TextInput, View, Animated} from 'react-native';
+import {TextInput, View, Animated, Image} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './styles';
 import Theme from '../../theme/Theme';
@@ -25,11 +25,17 @@ const InputText = props => {
   return (
     <View
       style={[
-        styles.viewMain, props.viewMain,
+        styles.viewMain,
+        props.viewMain,
         {
           borderColor: isFocused
             ? Theme.colors.borderColor5
             : Theme.colors.borderColor4,
+        },
+        props?.isCard && {
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         },
       ]}>
       <Animated.Text style={[styles.textTitle, labelStyle]}>
@@ -49,6 +55,9 @@ const InputText = props => {
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
+      {props?.isCard && (
+        <Image style={styles.iconImage} source={Theme.icons.Card_Circles} />
+      )}
     </View>
   );
 };

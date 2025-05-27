@@ -96,6 +96,7 @@ export default Theme = {
     True_Icon: require('../resources/ic_true_icon.png'),
     Graph_Image: require('../resources/ic_graph.png'),
     Diamond_Icon: require('../resources/ic_diamond_icon.png'),
+    Diamond_3D_Icon: require('../resources/ic_diamond_3d_icon.png'),
     Game_Bar_Icon: require('../resources/ic_game_bar.png'),
     Game_Bar_Icon_2: require('../resources/ic_game_bar2.png'),
     Edit_Icon: require('../resources/ic_edit_icon.png'),
@@ -109,6 +110,10 @@ export default Theme = {
     SMS_Icon: require('../resources/ic_sms_icon.png'),
     Heart_Icon: require('../resources/ic_heart_icon.png'),
     Puzzle_Icon: require('../resources/ic_puzzle_icon.png'),
+    Card_Circles: require('../resources/ic_card_circles.png'),
+    Star_3D_Icon: require('../resources/ic_star_3d_icon.png'),
+    Check_Icon: require('../resources/ic_check_icon.png'),
+    Visa_Icon: require('../resources/ic_visa_icon.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),

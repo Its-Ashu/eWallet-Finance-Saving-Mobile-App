@@ -16,13 +16,17 @@ const styles = StyleSheet.create({
     letterSpacing: -0.3,
     color: Theme.colors.textColor8,
     left: Theme.responsiveSize.size20,
-    fontSize:Theme.responsiveSize.size14,
+    fontSize: Theme.responsiveSize.size14,
     fontFamily: Theme.fonts.fontSansMedium,
   },
   textInput: {
     color: Theme.colors.textColor1,
     fontSize: Theme.responsiveSize.size16,
     fontFamily: Theme.fonts.fontSansMedium,
+  },
+  iconImage: {
+    height: Theme.responsiveSize.size36,
+    width: Theme.responsiveSize.size36,
   },
 });
 

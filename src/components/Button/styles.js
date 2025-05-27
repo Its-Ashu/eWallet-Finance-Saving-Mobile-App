@@ -17,13 +17,14 @@ const styles = StyleSheet.create({
   plusIcon: {
     height: Theme.responsiveSize.size16,
     width: Theme.responsiveSize.size16,
-    marginRight:Theme.responsiveSize.size10
+    marginRight: Theme.responsiveSize.size10,
   },
   buttonText: {
     textAlign: 'center',
     color: Theme.colors.textColor2,
     fontSize: Theme.responsiveSize.size14,
     fontFamily: Theme.fonts.fontSansBold,
+    lineHeight: Theme.responsiveSize.size22,
   },
   viewNext: {
     alignItems: 'flex-end',

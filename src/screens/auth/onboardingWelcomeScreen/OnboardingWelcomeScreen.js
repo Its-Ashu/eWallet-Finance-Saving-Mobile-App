@@ -75,7 +75,7 @@ const OnboardingWelcomeScreen = props => {
                 <View>
                   <Image
                     style={styles.appImage}
-                    resizeMode={'cover'}
+                    resizeMode={'contain'}
                     source={Theme.icons.Top_View_BG}
                   />
                   <View style={styles.viewDarkIcon}>

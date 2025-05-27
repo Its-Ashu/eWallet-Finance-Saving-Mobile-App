@@ -5,6 +5,7 @@ import {Constants} from '../constants';
 import Theme from '../theme/Theme';
 import BottomTabNavigation from './BottomTabNavigation';
 import {
+  AddCardScreen,
   ExploreMoreScreen,
   PassportCameraScreen,
   PassportCheckScreen,
@@ -24,7 +25,7 @@ const ScreenStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.SAVING_SCREEN_STACK}>
+      <Stack.Navigator initialRouteName={Constants.BOTTOM_TAB_NAVIGATION}>
         <Stack.Screen
           name={Constants.BOTTOM_TAB_NAVIGATION}
           component={BottomTabNavigation}
@@ -53,6 +54,11 @@ const ScreenStackNavigation = () => {
         <Stack.Screen
           name={Constants.SAVING_SCREEN_STACK}
           component={SavingScreenStack}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={Constants.ADD_CARD_SCREEN}
+          component={AddCardScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

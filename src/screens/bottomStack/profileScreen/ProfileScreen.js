@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -10,12 +11,13 @@ import {
 } from 'react-native';
 import {LinkAccount} from '../../../components/LinkAccount';
 import {ProfileItem} from '../../../components/ProfileItem';
+import {Constants} from '../../../constants';
 import Theme from '../../../theme/Theme';
 import styles from './styles';
 
 const ProfileScreen = props => {
-  //All States
-  //Main States
+  const route = useRoute();
+  const isCardAdded = route.params?.isCardAdded;
   return (
     <>
       <StatusBar
@@ -45,7 +47,7 @@ const ProfileScreen = props => {
                     styles.textTitle,
                     {fontSize: Theme.responsiveSize.size34, marginVertical: 0},
                   ]}>
-                  {'$0'}
+                  {isCardAdded ? '$1200' : '$0'}
                   <Text style={{color: Theme.colors.textColor9}}>{'.00'}</Text>
                 </Text>
                 <View style={styles.viewRow}>
@@ -58,13 +60,17 @@ const ProfileScreen = props => {
                   />
                 </View>
                 <LinkAccount
+                  viewStyle={{marginTop: Theme.responsiveSize.size32}}
+                  isCardAdded={isCardAdded}
                   icon={Theme.icons.Card_Icon}
                   title={'Link your bank account'}
                   subTitle={`Transfer your cash to 
 investments to meet your goals`}
                   plusIcon={true}
-                  buttonTitle={'Add card'}
-                  onPress={() => {}}
+                  buttonTitle={isCardAdded ? 'Add new card' : 'Add card'}
+                  onPress={() => {
+                    props.navigation.navigate(Constants.ADD_CARD_SCREEN);
+                  }}
                 />
                 <ProfileItem
                   icon={Theme.icons.Profile_Blue_Icon}

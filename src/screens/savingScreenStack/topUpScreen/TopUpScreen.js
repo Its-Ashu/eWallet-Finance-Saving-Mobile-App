@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {
-  Image,
-  Pressable,
   SafeAreaView,
   StatusBar,
   Text,
   View,
   TextInput,
+  Pressable,
   Modal,
+  Image,
 } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Button} from '../../../components/Button';
@@ -16,8 +16,8 @@ import {Constants} from '../../../constants';
 import Theme from '../../../theme/Theme';
 import styles from './styles';
 
-const InvestLowFundScreen = props => {
-  const [price, setPrice] = useState('980.00');
+const TopUpScreen = props => {
+  const [price, setPrice] = useState('20.00');
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -32,14 +32,14 @@ const InvestLowFundScreen = props => {
             <View style={styles.viewTop}>
               <ProgressBar
                 progress={0.5}
-                backIcon={true}
-                onPressback={() => {
+                closeIcon={true}
+                onPressClose={() => {
                   props.navigation.goBack();
                 }}
               />
               <Text style={styles.textTitle}>
-                {`How much 
-do you want to save?`}
+                {`Amount 
+of investments`}
               </Text>
             </View>
             <View style={styles.inputContainer}>
@@ -48,36 +48,26 @@ do you want to save?`}
                 style={styles.textInput}
                 value={price}
                 onChangeText={setPrice}
-                placeholder={'980.00'}
+                placeholder={'20.00'}
                 keyboardType="numeric"
                 placeholderTextColor={Theme.colors.textColor18}
               />
             </View>
-            <Text style={styles.textSubTitle}>{'Set amount of the goal'}</Text>
-            <View style={styles.viewInvitation}>
-              <View style={styles.viewCircles}>
-                <Image
-                  style={styles.circleIcon}
-                  source={Theme.icons.Home3D_Icon}
-                />
-              </View>
-              <Text style={styles.textInviteTitle}>{'New home'}</Text>
-              <Pressable>
-                <Image style={styles.copyIcon} source={Theme.icons.Edit_Icon} />
-              </Pressable>
-            </View>
+            <Text style={styles.textSubTitle}>
+              {'Set amount of investments'}
+            </Text>
+            <Button
+              title="Invest in low risk fund"
+              viewMain={{
+                marginHorizontal: 0,
+                marginVertical: Theme.responsiveSize.size18,
+              }}
+              viewStyle={{backgroundColor: Theme.colors.bgColor4}}
+              onPress={() => {
+                setModalVisible(true);
+              }}
+            />
           </ScrollView>
-          <Button
-            title="Invest in low risk fund"
-            viewMain={{
-              marginHorizontal: 0,
-              marginVertical: Theme.responsiveSize.size18,
-            }}
-            viewStyle={{backgroundColor: Theme.colors.bgColor4}}
-            onPress={() => {
-              setModalVisible(true);
-            }}
-          />
         </View>
         <Modal
           animationType="fade"
@@ -99,25 +89,38 @@ do you want to save?`}
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
               <View style={styles.modalIconContainer}>
-                <Image style={styles.modalIcon} source={Theme.icons.SMS_Icon} />
+                <Image
+                  style={styles.modalIcon}
+                  source={Theme.icons.Diamond_3D_Icon}
+                />
               </View>
               <View style={styles.viewMiddleModal}>
                 <Text style={styles.modalTitle}>
-                  {'Enable SMS notifications'}
+                  {`+ $20`}
+                  <Text style={{color: Theme.colors.textColor18}}>{'.00'}</Text>
                 </Text>
                 <Text style={styles.modalSubTitle}>
-                  {`Turn on SMS notifications to keep yourself up-to-date with your savings`}
+                  {`Your account will be
+activated in 3 business days`}
                 </Text>
               </View>
               <Button
                 viewStyle={{backgroundColor: Theme.colors.bgColor1}}
                 viewMain={styles.viewButton}
-                title={'I agree'}
+                title={'Got it'}
                 onPress={() => {
-                  props.navigation.navigate(
-                    Constants.MONTHLY_INVESTMENT_SCREEN,
-                  );
-                  setModalVisible(false);
+                  props.navigation.navigate(Constants.SCREEN_STACK_NAVIGATION, {
+                    screen: Constants.BOTTOM_TAB_NAVIGATION,
+                    params: {
+                      screen: Constants.HOME_SCREEN_STACK,
+                      params: {
+                        screen: Constants.HOME_SCREEN,
+                        params: {
+                          isVerified: true,
+                        },
+                      },
+                    },
+                  });
                 }}
               />
             </View>
@@ -128,4 +131,4 @@ do you want to save?`}
   );
 };
 
-export default InvestLowFundScreen;
+export default TopUpScreen;

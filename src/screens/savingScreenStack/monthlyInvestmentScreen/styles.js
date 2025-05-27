@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: -Theme.responsiveSize.size22,
   },
   dollarSign: {
     color: Theme.colors.textColor1,

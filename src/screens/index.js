@@ -28,6 +28,7 @@ import {
   PassportCheckScreen,
   SelfieCameraScreen,
   ExploreMoreScreen,
+  AddCardScreen,
 } from './screenStackNavigation';
 
 import {
@@ -36,6 +37,7 @@ import {
   InvestLowFundScreen,
   MonthlyInvestmentScreen,
   SelectSimpleFundScreen,
+  TopUpScreen,
 } from './savingScreenStack';
 
 export {
@@ -67,4 +69,6 @@ export {
   InvestLowFundScreen,
   MonthlyInvestmentScreen,
   SelectSimpleFundScreen,
+  TopUpScreen,
+  AddCardScreen,
 };

@@ -19,8 +19,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   appImage: {
-    height: width + Theme.responsiveSize.size48,
+    height: width + Theme.responsiveSize.size60,
     width: width,
+    marginTop: -Theme.responsiveSize.size10,
   },
   viewDarkIcon: {
     position: 'absolute',

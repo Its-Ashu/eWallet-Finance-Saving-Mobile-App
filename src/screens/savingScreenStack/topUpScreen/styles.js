@@ -46,36 +46,7 @@ const styles = StyleSheet.create({
     fontSize: Theme.responsiveSize.size16,
     fontFamily: Theme.fonts.fontSansMedium,
     marginTop: -Theme.responsiveSize.size12,
-  },
-  viewInvitation: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Theme.colors.bgColor9,
-    borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size12,
-    paddingRight: Theme.responsiveSize.size26,
-    marginTop: Theme.responsiveSize.size22,
-  },
-  viewCircles: {
-    backgroundColor: Theme.colors.bgColor24,
-    borderRadius: Theme.responsiveSize.size38,
-    padding: Theme.responsiveSize.size14,
-  },
-  circleIcon: {
-    height: Theme.responsiveSize.size65,
-    width: Theme.responsiveSize.size65,
-  },
-  textInviteTitle: {
-    fontSize: Theme.responsiveSize.size16,
-    fontFamily: Theme.fonts.fontSansBold,
-    color: Theme.colors.textColor1,
-    lineHeight: Theme.responsiveSize.size26,
-    marginLeft: Theme.responsiveSize.size22,
-    marginRight: Theme.responsiveSize.size06,
-  },
-  copyIcon: {
-    height: Theme.responsiveSize.size22,
-    width: Theme.responsiveSize.size22,
+    marginBottom: Theme.responsiveSize.size32,
   },
 
   //Modal Styles

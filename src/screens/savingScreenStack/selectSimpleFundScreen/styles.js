@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     width: '100%',
+    height: '82%',
     position: 'absolute',
     bottom: Theme.responsiveSize.size22,
     backgroundColor: Theme.colors.bgColor2,
@@ -116,6 +117,7 @@ const styles = StyleSheet.create({
     height: Theme.responsiveSize.size200,
   },
   viewMiddleModal: {
+    flex: 1,
     marginVertical: Theme.responsiveSize.size50,
   },
   modalTitle: {
