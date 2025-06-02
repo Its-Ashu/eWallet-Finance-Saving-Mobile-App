@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size20,
   },
   viewTop: {
-    marginTop: Theme.responsiveSize.size30,
+    marginTop: Theme.responsiveSize.size16,
     marginBottom: Theme.responsiveSize.size70,
   },
   textTitle: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
     paddingHorizontal: Theme.responsiveSize.size20,
-    backgroundColor: Theme.colors.bgColor8,
+    backgroundColor: Theme.colors.bgColor28,
     alignItems: 'center',
   },
   modalContent: {

@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size20,
   },
   viewTop: {
-    marginVertical: Theme.responsiveSize.size40,
+    marginVertical: Theme.responsiveSize.size24,
+    marginBottom: Theme.responsiveSize.size40,
   },
   textTitle: {
     letterSpacing: -0.8,
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     width: '100%',
     // height: '90%',
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Theme.colors.bgColor2,
     borderTopLeftRadius: Theme.responsiveSize.size40,
     borderTopRightRadius: Theme.responsiveSize.size40,
   },

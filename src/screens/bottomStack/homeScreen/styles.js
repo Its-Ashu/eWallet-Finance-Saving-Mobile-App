@@ -15,11 +15,13 @@ const styles = StyleSheet.create({
   },
   appImage: {
     position: 'absolute',
-    height: width + Theme.responsiveSize.size50,
+    height: width + Theme.responsiveSize.size58,
     width: width,
+    marginTop: -Theme.responsiveSize.size50,
+    zIndex: -1,
   },
   viewTop: {
-    paddingTop: Theme.responsiveSize.size70,
+    paddingTop: Theme.responsiveSize.size50,
     paddingBottom: Theme.responsiveSize.size35,
   },
   textTitle: {

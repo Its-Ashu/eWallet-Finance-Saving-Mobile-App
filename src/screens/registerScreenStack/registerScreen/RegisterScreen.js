@@ -109,6 +109,7 @@ const RegisterScreen = props => {
         icon={item.icon}
         title={item.title}
         subTitle={item.subTitle}
+        onPress={closeSheet}
       />
     );
   };
@@ -208,7 +209,11 @@ const RegisterScreen = props => {
               </View>
             </KeyboardAwareScrollView>
           </View>
-          <Modal transparent visible={visible} animationType="none">
+          <Modal
+            transparent
+            visible={visible}
+            animationType="none"
+            statusBarTranslucent={true}>
             <TouchableOpacity
               activeOpacity={1}
               onPress={closeSheet}

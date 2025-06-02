@@ -13,8 +13,8 @@ const LoginScreen = props => {
   return (
     <>
       <StatusBar
-        backgroundColor={Theme.colors.appColor}
-        barStyle={'light-content'}
+        backgroundColor={Theme.colors.bgColor2}
+        barStyle={'dark-content'}
         hidden={false}
       />
       <SafeAreaView style={styles.viewMainContainer}>

@@ -46,8 +46,10 @@ const VerifyIdentityScreen1 = props => {
       duration: 300,
       useNativeDriver: true,
     }).start(() => {
-      setVisible(false); // hide modal
-      if (callback) callback(); // <-- now navigate
+      setVisible(false);
+      if (typeof callback === 'function') {
+        callback(); // only call if it's a function
+      }
     });
   };
 
@@ -83,11 +85,12 @@ const VerifyIdentityScreen1 = props => {
     }),
   ).current;
 
+  const data = ["Driver's License", 'National Identity Card', 'Passport'];
   return (
     <>
       <StatusBar
-        backgroundColor={Theme.colors.appColor}
-        barStyle={'light-content'}
+        backgroundColor={Theme.colors.bgColor2}
+        barStyle={'dark-content'}
         hidden={false}
       />
       <SafeAreaView style={styles.viewMainContainer}>
@@ -184,7 +187,11 @@ const VerifyIdentityScreen1 = props => {
             title={'Verify my identity'}
           />
         </View>
-        <Modal transparent visible={visible} animationType="none">
+        <Modal
+          transparent
+          visible={visible}
+          animationType="none"
+          statusBarTranslucent={true}>
           <TouchableWithoutFeedback onPress={closeSheet}>
             <View style={styles.backdrop} />
           </TouchableWithoutFeedback>
@@ -205,40 +212,35 @@ const VerifyIdentityScreen1 = props => {
               <Text style={styles.textBottomSheetSubTitle}>
                 {'Which photo ID whould you like to use?'}
               </Text>
-              {["Driver's License", 'National Identity Card', 'Passport'].map(
-                label => (
-                  <TouchableOpacity
-                    key={label}
+              {data?.map(label => (
+                <TouchableOpacity
+                  key={label}
+                  style={styles.viewRowBottomSheet}
+                  onPress={() => {
+                    closeSheet(() => {
+                      props.navigation.navigate(
+                        Constants.PASSPORT_CAMERA_SCREEN,
+                      );
+                    });
+                  }}>
+                  <Text
                     style={[
-                      styles.viewRowBottomSheet,
-                      {borderBottomWidth: label?.length - 1 ? 1 : 0},
-                    ]}
-                    onPress={() => {
-                      closeSheet(() => {
-                        props.navigation.navigate(
-                          Constants.PASSPORT_CAMERA_SCREEN,
-                        );
-                      });
-                    }}>
-                    <Text
-                      style={[
-                        styles.textFeatureTitle,
-                        {
-                          textAlign: 'left',
-                          flex: 1,
-                          fontSize: Theme.responsiveSize.size20,
-                        },
-                      ]}>
-                      {label}
-                    </Text>
-                    <Image
-                      style={styles.nextIcon}
-                      tintColor={Theme.colors.textColor12}
-                      source={Theme.icons.Next_Icon}
-                    />
-                  </TouchableOpacity>
-                ),
-              )}
+                      styles.textFeatureTitle,
+                      {
+                        textAlign: 'left',
+                        flex: 1,
+                        fontSize: Theme.responsiveSize.size20,
+                      },
+                    ]}>
+                    {label}
+                  </Text>
+                  <Image
+                    style={styles.nextIcon}
+                    tintColor={Theme.colors.textColor12}
+                    source={Theme.icons.Next_Icon}
+                  />
+                </TouchableOpacity>
+              ))}
             </View>
           </Animated.View>
         </Modal>

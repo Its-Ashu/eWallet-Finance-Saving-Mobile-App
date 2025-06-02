@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size20,
   },
   viewTop: {
-    marginTop: Theme.responsiveSize.size30,
+    marginTop: Theme.responsiveSize.size16,
   },
   textTitle: {
     textAlign: 'center',

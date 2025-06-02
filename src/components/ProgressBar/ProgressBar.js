@@ -15,7 +15,7 @@ const ProgressBar = props => {
       {!props.backIcon && !props.closeIcon ? (
         <View style={styles.backIcon} />
       ) : null}
-      <View style={styles.viewProgress}>
+      <View style={[styles.viewProgress, props.viewProgress]}>
         <View
           style={[
             styles.viewInnerProgress,

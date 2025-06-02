@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.responsiveSize.size20,
   },
   viewTop: {
-    marginVertical: Theme.responsiveSize.size26,
+    marginVertical: Theme.responsiveSize.size16,
   },
   textTitle: {
     letterSpacing: -0.8,

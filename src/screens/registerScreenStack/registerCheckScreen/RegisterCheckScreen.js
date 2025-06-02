@@ -67,7 +67,24 @@ const RegisterCheckScreen = props => {
           />
         </View>
       </SafeAreaView>
-      <Modal animationType="slide" transparent={true} visible={modalVisible}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        statusBarTranslucent={true}>
+        <ProgressBar
+          viewMain={{
+            position: 'absolute',
+            zIndex: 1,
+            alignSelf: 'center',
+            top: Theme.responsiveSize.size62,
+          }}
+          viewProgress={{backgroundColor: Theme.colors.bgColor12}}
+          progress={0.625}
+          onPressClose={() => {
+            props.navigation.goBack();
+          }}
+        />
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <View style={styles.modalIconContainer}>

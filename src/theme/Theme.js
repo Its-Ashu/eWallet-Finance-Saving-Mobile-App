@@ -40,6 +40,7 @@ export default Theme = {
     bgColor25: '#9559F612',
     bgColor26: '#9559F6',
     bgColor27: '#5EC1F5',
+    bgColor28: '#040415b0',
 
     borderColor1: '#12033A',
     borderColor2: '#ffffff',
