@@ -1,5 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+allprojects {
+    tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs += ["--release", "17"]
+    }
+}
 buildscript {
     // ext {
     //     buildToolsVersion = "33.0.0"
@@ -16,7 +20,8 @@ buildscript {
         compileSdkVersion = 34 // ✅ change from 33 to 34
         targetSdkVersion = 34  // ✅ optional but recommended
         ndkVersion = "23.1.7779620"
-        kotlinVersion = "1.7.10" 
+        kotlinVersion = '1.9.0'
+        cameraXVersion = "1.1.0"
     }
     repositories {
         google()
@@ -28,3 +33,4 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
     }
 }
+
