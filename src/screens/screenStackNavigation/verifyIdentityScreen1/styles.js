@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     lineHeight: Theme.responsiveSize.size34,
   },
   nextIcon: {
-    height: Theme.responsiveSize.size24,
-    width: Theme.responsiveSize.size24,
+    height: Theme.responsiveSize.size18,
+    width: Theme.responsiveSize.size18,
   },
   textFeatureSubTitle: {
     textAlign: 'center',
@@ -79,13 +79,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: Theme.responsiveSize.size16,
+    marginTop: Theme.responsiveSize.size02,
+    marginBottom: Theme.responsiveSize.size14,
     paddingBottom: Theme.responsiveSize.size14,
     borderBottomColor: Theme.colors.borderColor4,
     borderBottomWidth: Theme.responsiveSize.size01,
   },
 
   //Modal
+  modalOverlay: {
+    flex: 1,
+  },
   backdrop: {
     flex: 1,
     backgroundColor: Theme.colors.bgColor8,
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 1,
     alignSelf: 'center',
-    top: -Theme.responsiveSize.size12,
+    top: -Theme.responsiveSize.size28,
   },
   draggableIcon: {
     width: Theme.responsiveSize.size200,

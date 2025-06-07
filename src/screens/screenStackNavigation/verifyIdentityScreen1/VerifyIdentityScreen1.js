@@ -1,19 +1,18 @@
 import React, {useState, useRef} from 'react';
 import {
-  Animated,
   Dimensions,
   Pressable,
   Image,
   Modal,
-  PanResponder,
   SafeAreaView,
   StatusBar,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
-  TouchableWithoutFeedback,
 } from 'react-native';
+import {Toast} from 'react-native-toast-message';
+import {Camera} from 'react-native-vision-camera';
+import ActionSheet from 'react-native-actions-sheet';
 import {Button} from '../../../components/Button';
 import {ProgressBar} from '../../../components/ProgressBar';
 import {Constants} from '../../../constants';
@@ -21,71 +20,39 @@ import Theme from '../../../theme/Theme';
 import styles from './styles';
 
 const {height} = Dimensions.get('window');
-const SHEET_HEIGHT = height * 0.6;
 
 const VerifyIdentityScreen1 = props => {
-  const [visible, setVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const translateY = useRef(new Animated.Value(SHEET_HEIGHT)).current;
   const isFromPassportCheck = props.route.params?.isFromPassportCheck;
   const isFromSelfieCamera = props.route.params?.isFromSelfieCamera;
-
+  const actionSheetRef = useRef(null);
   const openSheet = () => {
-    translateY.setValue(SHEET_HEIGHT);
-    setVisible(true);
-    Animated.timing(translateY, {
-      toValue: 0,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
+    actionSheetRef.current?.show();
   };
 
-  const closeSheet = callback => {
-    Animated.timing(translateY, {
-      toValue: height, // slide down off-screen
-      duration: 300,
-      useNativeDriver: true,
-    }).start(() => {
-      setVisible(false);
-      if (typeof callback === 'function') {
-        callback(); // only call if it's a function
-      }
-    });
+  const closeSheet = () => {
+    actionSheetRef.current?.hide();
   };
-
-  const panResponder = useRef(
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onMoveShouldSetPanResponder: () => true,
-
-      onPanResponderMove: (evt, gestureState) => {
-        if (gestureState.dy > 0) {
-          translateY.setValue(gestureState.dy);
-        }
-      },
-
-      onPanResponderRelease: (evt, gestureState) => {
-        const shouldClose = gestureState.dy > 100;
-
-        if (shouldClose) {
-          Animated.timing(translateY, {
-            toValue: SHEET_HEIGHT,
-            duration: 200,
-            useNativeDriver: true,
-          }).start(() => {
-            setVisible(false);
-          });
-        } else {
-          Animated.spring(translateY, {
-            toValue: 0,
-            useNativeDriver: true,
-          }).start();
-        }
-      },
-    }),
-  ).current;
 
   const data = ["Driver's License", 'National Identity Card', 'Passport'];
+
+  const handleOpenCamera = async label => {
+    const cameraPermission = await Camera.requestCameraPermission();
+
+    const isGranted =
+      cameraPermission === 'authorized' || cameraPermission === 'granted';
+
+    if (isGranted) {
+      props.navigation.navigate(Constants.PASSPORT_CAMERA_SCREEN, {
+        documentType: label,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: 'Camera permission not granted',
+      });
+    }
+  };
   return (
     <>
       <StatusBar
@@ -187,63 +154,64 @@ const VerifyIdentityScreen1 = props => {
             title={'Verify my identity'}
           />
         </View>
-        <Modal
-          transparent
-          visible={visible}
-          animationType="none"
-          statusBarTranslucent={true}>
-          <TouchableWithoutFeedback onPress={closeSheet}>
-            <View style={styles.backdrop} />
-          </TouchableWithoutFeedback>
 
-          <Animated.View
-            style={[styles.sheetContainer, {transform: [{translateY}]}]}
-            {...panResponder.panHandlers}>
+        <ActionSheet
+          ref={actionSheetRef}
+          gestureEnabled={true}
+          showHandle={false}
+          containerStyle={{
+            borderTopLeftRadius: Theme.responsiveSize.size36,
+            borderTopRightRadius: Theme.responsiveSize.size36,
+            paddingHorizontal: Theme.responsiveSize.size20,
+            backgroundColor: 'white',
+          }}>
+          <TouchableOpacity
+            activeOpacity={1}
+            style={styles.viewDraggable}
+            onPress={closeSheet}>
+            <Image
+              style={styles.draggableIcon}
+              source={Theme.icons.Draggable_Icon}
+            />
+          </TouchableOpacity>
+          <Text
+            style={[
+              styles.textBottomSheetSubTitle,
+              {marginTop: Theme.responsiveSize.size20},
+            ]}>
+            {'Which photo ID would you like to use?'}
+          </Text>
+
+          {data.map(label => (
             <TouchableOpacity
-              activeOpacity={0.7}
-              style={styles.viewDraggable}
-              onPress={closeSheet}>
+              key={label}
+              style={[
+                styles.viewRowBottomSheet,
+                {borderBottomWidth: label === 'Passport' ? 0 : 1},
+              ]}
+              onPress={() => {
+                actionSheetRef.current?.hide(); // 👈 close sheet
+                handleOpenCamera(label); // 👈 call action
+              }}>
+              <Text
+                style={[
+                  styles.textFeatureTitle,
+                  {
+                    textAlign: 'left',
+                    flex: 1,
+                    fontSize: Theme.responsiveSize.size20,
+                  },
+                ]}>
+                {label}
+              </Text>
               <Image
-                style={styles.draggableIcon}
-                source={Theme.icons.Draggable_Icon}
+                style={styles.nextIcon}
+                tintColor={Theme.colors.textColor12}
+                source={Theme.icons.Next_Grey_Icon}
               />
             </TouchableOpacity>
-            <View style={styles.viewMain}>
-              <Text style={styles.textBottomSheetSubTitle}>
-                {'Which photo ID whould you like to use?'}
-              </Text>
-              {data?.map(label => (
-                <TouchableOpacity
-                  key={label}
-                  style={styles.viewRowBottomSheet}
-                  onPress={() => {
-                    closeSheet(() => {
-                      props.navigation.navigate(
-                        Constants.PASSPORT_CAMERA_SCREEN,
-                      );
-                    });
-                  }}>
-                  <Text
-                    style={[
-                      styles.textFeatureTitle,
-                      {
-                        textAlign: 'left',
-                        flex: 1,
-                        fontSize: Theme.responsiveSize.size20,
-                      },
-                    ]}>
-                    {label}
-                  </Text>
-                  <Image
-                    style={styles.nextIcon}
-                    tintColor={Theme.colors.textColor12}
-                    source={Theme.icons.Next_Icon}
-                  />
-                </TouchableOpacity>
-              ))}
-            </View>
-          </Animated.View>
-        </Modal>
+          ))}
+        </ActionSheet>
 
         <Modal animationType="slide" transparent={true} visible={modalVisible}>
           <ProgressBar

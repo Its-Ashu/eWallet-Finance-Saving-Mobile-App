@@ -47,6 +47,8 @@ export default Theme = {
     borderColor3: '#000000',
     borderColor4: '#E7E6EB',
     borderColor5: '#A09AB0',
+    borderColor6: '#FFFFFF99',
+    borderColor7: '#7462933D',
 
     textColor1: '#12033A',
     textColor2: '#ffffff',
@@ -81,6 +83,7 @@ export default Theme = {
     Draggable_Icon: require('../resources/ic_draggable_icon.png'),
     Back_Icon: require('../resources/ic_back_icon.png'),
     Next_Icon: require('../resources/ic_next_icon.png'),
+    Next_Grey_Icon: require('../resources/ic_next_grey_icon.png'),
     Location_Icon: require('../resources/ic_location_icon.png'),
     Close_Icon: require('../resources/ic_close_icon.png'),
     Home_Blue_Icon: require('../resources/ic_home_blue.png'),
@@ -91,6 +94,7 @@ export default Theme = {
     Fire_Icon: require('../resources/ic_fire_icon.png'),
     Scan_Icon: require('../resources/ic_scan_icon.png'),
     Info_Icon: require('../resources/ic_info_icon.png'),
+    Info_White_Icon: require('../resources/ic_info_white_icon.png'),
     Card_Icon: require('../resources/ic_card_icon.png'),
     Circles_Icon: require('../resources/ic_circles_icon.png'),
     Copy_Icon: require('../resources/ic_copy_icon.png'),
@@ -115,6 +119,9 @@ export default Theme = {
     Star_3D_Icon: require('../resources/ic_star_3d_icon.png'),
     Check_Icon: require('../resources/ic_check_icon.png'),
     Visa_Icon: require('../resources/ic_visa_icon.png'),
+    Flash_off_Icon: require('../resources/ic_flash_off.png'),
+    Flash_on_Icon: require('../resources/ic_flash_on.png'),
+    Front_Camera_Icon: require('../resources/ic_front_camera.png'),
 
     // Bottom Tab Bar Icons
     Home_Icon: require('../resources/ic_home.png'),
