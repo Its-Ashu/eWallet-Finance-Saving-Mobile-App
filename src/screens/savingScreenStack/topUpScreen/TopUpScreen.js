@@ -79,7 +79,7 @@ of investments`}
               position: 'absolute',
               zIndex: 1,
               alignSelf: 'center',
-              top: Theme.responsiveSize.size62,
+              top: Theme.responsiveSize.size42 + 4,
             }}
             progress={'100%'}
             onPressClose={() => {
@@ -109,6 +109,7 @@ activated in 3 business days`}
                 viewMain={styles.viewButton}
                 title={'Got it'}
                 onPress={() => {
+                  setModalVisible(false);
                   props.navigation.navigate(Constants.SCREEN_STACK_NAVIGATION, {
                     screen: Constants.BOTTOM_TAB_NAVIGATION,
                     params: {

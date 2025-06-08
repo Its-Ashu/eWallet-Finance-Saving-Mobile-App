@@ -53,6 +53,21 @@ const VerifyIdentityScreen1 = props => {
       });
     }
   };
+  const handleOpenSelfieCamera = async () => {
+    const cameraPermission = await Camera.requestCameraPermission();
+
+    const isGranted =
+      cameraPermission === 'authorized' || cameraPermission === 'granted';
+
+    if (isGranted) {
+      props.navigation.navigate(Constants.SELFIE_CAMERA_SCREEN);
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: 'Camera permission not granted',
+      });
+    }
+  };
   return (
     <>
       <StatusBar
@@ -64,7 +79,7 @@ const VerifyIdentityScreen1 = props => {
         <View style={styles.container}>
           <View style={styles.viewTop}>
             <ProgressBar
-              progress={0.5}
+              progress={0.25}
               closeIcon={true}
               onPressClose={() => {
                 props.navigation.goBack();
@@ -126,7 +141,7 @@ const VerifyIdentityScreen1 = props => {
                 <Pressable
                   style={styles.viewPlus}
                   onPress={() => {
-                    props.navigation.navigate(Constants.SELFIE_CAMERA_SCREEN);
+                    handleOpenSelfieCamera();
                   }}>
                   <Image
                     style={styles.plusIcon}
@@ -213,13 +228,17 @@ const VerifyIdentityScreen1 = props => {
           ))}
         </ActionSheet>
 
-        <Modal animationType="slide" transparent={true} visible={modalVisible}>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          statusBarTranslucent={true}>
           <ProgressBar
             viewMain={{
               position: 'absolute',
               zIndex: 1,
               alignSelf: 'center',
-              top: Theme.responsiveSize.size40,
+              top: Theme.responsiveSize.size52 + 1,
             }}
             progress={1}
             onPressClose={() => {

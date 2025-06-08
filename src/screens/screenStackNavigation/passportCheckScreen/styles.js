@@ -37,9 +37,22 @@ const styles = StyleSheet.create({
     marginTop: Theme.responsiveSize.size04,
   },
   viewPassport: {
-    backgroundColor: Theme.colors.bgColor14,
-    height: 208,
+    // overflow: 'hidden',
+  },
+  imagePreview: {
+    marginTop: -Theme.responsiveSize.size20,
+    alignSelf: 'center',
+    height: width - Theme.responsiveSize.size40,
+    width: width * 0.65,
     borderRadius: Theme.responsiveSize.size14,
+    transform: [{rotate: '-90deg'}],
+  },
+  imageSelfiePreview: {
+    alignSelf: 'center',
+    width: width * 0.7,
+    height: width * 0.7,
+    borderRadius: Theme.responsiveSize.size14,
+    transform: [{rotate: '90deg'}],
   },
   viewSelfie: {
     alignSelf: 'center',

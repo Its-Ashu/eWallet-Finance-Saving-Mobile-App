@@ -71,11 +71,7 @@ const ActivityScreen = props => {
         <View style={styles.container}>
           <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
             <View style={{marginBottom: Theme.responsiveSize.size100}}>
-              <Image
-                style={styles.appImage}
-                resizeMode={'cover'}
-                source={Theme.icons.Top_View_BG}
-              />
+              <View style={styles.appImage} />
               <View style={styles.viewTop}>
                 <Text style={styles.textTitle}>{'My funds'}</Text>
               </View>

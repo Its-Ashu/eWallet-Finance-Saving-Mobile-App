@@ -89,9 +89,10 @@ do you want to save?`}
               position: 'absolute',
               zIndex: 1,
               alignSelf: 'center',
-              top: Theme.responsiveSize.size62,
+              top: Theme.responsiveSize.size42 + 4,
             }}
-            progress={'100%'}
+            viewProgress={{backgroundColor: Theme.colors.bgColor12}}
+            progress={0.5}
             onPressClose={() => {
               props.navigation.goBack();
             }}

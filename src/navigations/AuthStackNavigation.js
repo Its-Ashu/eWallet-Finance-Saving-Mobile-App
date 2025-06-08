@@ -22,7 +22,7 @@ const AuthStackNavigation = () => {
         barStyle={'light-content'}
         hidden={false}
       />
-      <Stack.Navigator initialRouteName={Constants.SCREEN_STACK_NAVIGATION}>
+      <Stack.Navigator initialRouteName={Constants.ONBOARDING_HOME_SCREEN}>
         <Stack.Screen
           name={Constants.ONBOARDING_HOME_SCREEN}
           component={OnboardingHomeScreen}

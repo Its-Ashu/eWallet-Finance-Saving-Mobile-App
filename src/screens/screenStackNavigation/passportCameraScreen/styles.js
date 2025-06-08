@@ -1,7 +1,12 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import Theme from '../../../theme/Theme';
 
-const {width} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
+
+const FRAME_WIDTH = width - Theme.responsiveSize.size40;
+const FRAME_HEIGHT = height * 0.28;
+const frameX = (width - FRAME_WIDTH) / 2;
+const frameY = height * 0.25;
 
 const styles = StyleSheet.create({
   viewMainContainer: {
@@ -12,6 +17,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Theme.colors.textColor17,
+  },
+  overlayDim: {
+    flex: 1,
+    backgroundColor: '#040415CC', // your semi-transparent dark overlay
   },
   overlay: {
     position: 'absolute',
@@ -53,14 +62,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'absolute',
+    top: height * 0.53,
+    alignSelf: 'center',
   },
   frame: {
-    width: width - Theme.responsiveSize.size40,
-    height: width * 0.6,
+    position: 'absolute',
+    top: frameY,
+    left: frameX,
+    width: FRAME_WIDTH,
+    height: FRAME_HEIGHT,
+    borderColor: Theme.colors.borderColor6,
     borderRadius: Theme.responsiveSize.size14,
     borderWidth: Theme.responsiveSize.size02,
-    borderColor: Theme.colors.borderColor6,
-    backgroundColor: Theme.colors.transparent,
   },
   instructionTitle: {
     marginTop: Theme.responsiveSize.size28,
@@ -101,6 +115,67 @@ const styles = StyleSheet.create({
     borderRadius: Theme.responsiveSize.size62,
     borderWidth: Theme.responsiveSize.size02,
     borderColor: Theme.colors.borderColor7,
+  },
+
+  overlayContainer: {
+    flex: 1,
+    position: 'absolute',
+  },
+  overlayTop: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: frameY,
+    backgroundColor: '#040415CC',
+  },
+  overlayBottom: {
+    position: 'absolute',
+    top: frameY + FRAME_HEIGHT,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: '#040415CC',
+  },
+  overlayLeft: {
+    position: 'absolute',
+    top: frameY,
+    left: 0,
+    width: frameX,
+    height: FRAME_HEIGHT,
+    backgroundColor: '#040415CC',
+  },
+  overlayRight: {
+    position: 'absolute',
+    top: frameY,
+    right: 0,
+    width: frameX,
+    height: FRAME_HEIGHT,
+    backgroundColor: '#040415CC',
+  },
+  middleRow: {
+    flexDirection: 'row',
+    height: FRAME_HEIGHT,
+  },
+  overlaySide: {
+    width: frameX,
+    backgroundColor: '#040415CC',
+  },
+  transparentFrame: {
+    width: FRAME_WIDTH,
+    height: FRAME_HEIGHT,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  frameBorder: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: FRAME_WIDTH,
+    height: FRAME_HEIGHT,
+    borderRadius: 16,
+    borderWidth: 2,
+    borderColor: 'white',
   },
 });
 

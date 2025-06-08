@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.8,
     textAlign: 'center',
     color: Theme.colors.textColor1,
-    marginTop: Theme.responsiveSize.size16,
+    marginTop: Theme.responsiveSize.size12,
     fontSize: Theme.responsiveSize.size24,
     fontFamily: Theme.fonts.fontSansBold,
   },

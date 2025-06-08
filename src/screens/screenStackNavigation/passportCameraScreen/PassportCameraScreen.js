@@ -3,20 +3,16 @@ import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-  Alert,
   StyleSheet as RNStyleSheet,
   SafeAreaView,
   Image,
 } from 'react-native';
-import {Camera, useCameraDevices} from 'react-native-vision-camera';
+import {Camera} from 'react-native-vision-camera';
 import {useRoute, useNavigation} from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import styles from './styles'; // Keep your existing styles
 import Theme from '../../../theme/Theme';
-
-const {width} = Dimensions.get('window');
+import {Constants} from '../../../constants';
 
 const PassportCameraScreen = () => {
   const navigation = useNavigation();
@@ -27,9 +23,8 @@ const PassportCameraScreen = () => {
   const [device, setDevice] = useState(null);
   const [isFlashOn, setIsFlashOn] = useState(false);
   const [isCameraVisible, setIsCameraVisible] = useState(false);
-
-  const devices = useCameraDevices();
-  const back = devices.back;
+  const [cameraPosition, setCameraPosition] = useState('back');
+  const [flash, setFlash] = useState('off');
 
   useEffect(() => {
     const loadCameraDevice = async () => {
@@ -37,7 +32,6 @@ const PassportCameraScreen = () => {
         const availableDevices = await Camera.getAvailableCameraDevices();
         const back = availableDevices.find(d => d.position === 'back');
         if (back) {
-          console.log('✅ Back camera found:', back.name);
           setDevice(back);
           setIsCameraVisible(true);
         } else {
@@ -48,7 +42,7 @@ const PassportCameraScreen = () => {
       }
     };
     loadCameraDevice();
-  }, [back, device]);
+  }, [device]);
 
   if (!isCameraVisible && !device) {
     return (
@@ -57,6 +51,14 @@ const PassportCameraScreen = () => {
       </View>
     );
   }
+
+  const toggleCamera = () => {
+    setCameraPosition(prev => (prev === 'back' ? 'front' : 'back'));
+  };
+
+  const toggleFlash = () => {
+    setFlash(prev => (prev === 'off' ? 'on' : 'off'));
+  };
 
   return (
     <SafeAreaView style={styles.viewMainContainer}>
@@ -67,9 +69,21 @@ const PassportCameraScreen = () => {
           device={device}
           isActive={true}
           photo={true}
-          torch={isFlashOn ? 'on' : 'off'}
+          torch={flash}
         />
-        <View style={{flex: 1, backgroundColor: Theme.colors.textColor17}}>
+
+        {/* Overlay with cutout */}
+        <View style={RNStyleSheet.absoluteFill}>
+          <View style={styles.overlayTop} />
+
+          <View style={styles.overlayBottom} />
+
+          <View style={styles.overlayLeft} />
+
+          <View style={styles.overlayRight} />
+
+          <View style={styles.frame} />
+          {/* Header */}
           <View style={styles.viewHeader}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
               <Image
@@ -83,32 +97,30 @@ const PassportCameraScreen = () => {
               <Image
                 style={[
                   styles.backIcon,
-                  {
-                    marginLeft: Theme.responsiveSize.size04,
-                  },
+                  {marginLeft: Theme.responsiveSize.size04},
                 ]}
                 source={Theme.icons.Info_White_Icon}
               />
             </View>
             <View style={{width: Theme.responsiveSize.size10}} />
           </View>
-          <View style={styles.overlay}>
-            <View style={styles.viewMiddle}>
-              <View style={styles.frame} />
-              <Text style={styles.instructionTitle}>{'Front of card'}</Text>
-              <Text style={styles.instructionText}>
-                Position all 4 corners clearly in the frame
-              </Text>
-            </View>
+
+          {/* Text & Instructions */}
+          <View style={styles.viewMiddle}>
+            <Text style={styles.instructionTitle}>Front of card</Text>
+            <Text style={styles.instructionText}>
+              {`Position all 4 corners of the front 
+clearly in the frame`}
+            </Text>
           </View>
+
+          {/* Bottom Buttons */}
           <View style={styles.bottomBar}>
-            <TouchableOpacity
-              style={styles.flashButton}
-              onPress={() => setIsFlashOn(prev => !prev)}>
+            <TouchableOpacity style={styles.flashButton} onPress={toggleFlash}>
               <Image
                 style={styles.flashIcon}
                 source={
-                  isFlashOn
+                  flash === 'on'
                     ? Theme.icons.Flash_on_Icon
                     : Theme.icons.Flash_off_Icon
                 }
@@ -124,7 +136,12 @@ const PassportCameraScreen = () => {
                     });
                     console.log('📸 Photo captured:', photo);
                     Toast.show({type: 'success', text1: 'Photo captured!'});
-                    // You can navigate or process the photo path here
+
+                    // Navigate and pass image path
+                    navigation.navigate(Constants.PASSPORT_CHECK_SCREEN, {
+                      photoPath: photo.path,
+                      isFromPassportCamera: true,
+                    });
                   } catch (e) {
                     console.error('Capture failed', e);
                     Toast.show({type: 'error', text1: 'Capture failed!'});
@@ -132,9 +149,7 @@ const PassportCameraScreen = () => {
                 }
               }}
             />
-            <TouchableOpacity
-              style={styles.flashButton}
-              onPress={() => setIsFlashOn(prev => !prev)}>
+            <TouchableOpacity style={styles.flashButton} onPress={toggleCamera}>
               <Image
                 style={styles.flashIcon}
                 source={Theme.icons.Front_Camera_Icon}
@@ -142,6 +157,7 @@ const PassportCameraScreen = () => {
             </TouchableOpacity>
           </View>
         </View>
+
         <Toast />
       </View>
     </SafeAreaView>

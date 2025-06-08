@@ -1,5 +1,6 @@
+import {useRoute} from '@react-navigation/native';
 import React from 'react';
-import {View, SafeAreaView, StatusBar, Text} from 'react-native';
+import {View, SafeAreaView, StatusBar, Text, Image} from 'react-native';
 import {Button} from '../../../components/Button';
 import {ProgressBar} from '../../../components/ProgressBar';
 import {Constants} from '../../../constants';
@@ -7,8 +8,9 @@ import Theme from '../../../theme/Theme';
 import styles from './styles';
 
 const PassportCheckScreen = props => {
-  const isFromSelfieCamera = props.route.params?.isFromSelfieCamera;
-
+  const route = useRoute();
+  const {photoPath, isFromSelfieCamera, isFromPassportCamera} =
+    route.params || {};
   return (
     <>
       <StatusBar
@@ -28,14 +30,27 @@ const PassportCheckScreen = props => {
             />
             <Text style={styles.textTitle}>{'Check quality'}</Text>
             <Text style={styles.textSubTitle}>
-              {`Please make sure your card details 
+              {isFromSelfieCamera
+                ? `Make sure your face is not blurred 
+or out of frame before continuing`
+                : `Please make sure your card details 
 are clear to read with no blur or glare`}
             </Text>
           </View>
           {isFromSelfieCamera ? (
-            <View style={styles.viewSelfie} />
+            <View style={styles.viewPassport}>
+              <Image
+                style={styles.imageSelfiePreview}
+                source={{uri: 'file://' + photoPath}}
+              />
+            </View>
           ) : (
-            <View style={styles.viewPassport} />
+            <View style={styles.viewPassport}>
+              <Image
+                style={styles.imagePreview}
+                source={{uri: 'file://' + photoPath}}
+              />
+            </View>
           )}
           <View style={{flex: 1}} />
           <Button

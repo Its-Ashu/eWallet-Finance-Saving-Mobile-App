@@ -51,7 +51,7 @@ const RegisterAddressMapScreen = props => {
         <View style={styles.container}>
           <View style={styles.paddingH20}>
             <View style={styles.viewTop}>
-              <ProgressBar progress={0.875} />
+              <ProgressBar progress={0.475} />
               <Text style={styles.textTitle}>{'Home address'}</Text>
             </View>
             <View style={styles.viewSearchLocation}>
@@ -79,7 +79,11 @@ const RegisterAddressMapScreen = props => {
             </View>
           </View>
           <View style={[styles.viewRow, styles.paddingV8, styles.paddingH20]}>
-            <Image style={styles.homeIcon} source={Theme.icons.Home_Icon} />
+            <Image
+              style={styles.homeIcon}
+              tintColor={Theme.colors.bgColor1}
+              source={Theme.icons.Home_Icon}
+            />
             <Text style={styles.textCommon}>{'My current location'}</Text>
           </View>
           <View style={styles.viewMap}>

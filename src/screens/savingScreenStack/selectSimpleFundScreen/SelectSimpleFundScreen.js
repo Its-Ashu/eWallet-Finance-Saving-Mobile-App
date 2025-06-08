@@ -155,7 +155,7 @@ national identity card or passport photo`}
               position: 'absolute',
               zIndex: 1,
               alignSelf: 'center',
-              top: Theme.responsiveSize.size62,
+              top: Theme.responsiveSize.size42 + 4,
             }}
             progress={'100%'}
             onPressClose={() => {
@@ -219,6 +219,7 @@ the goal at any time`}
                 viewMain={styles.viewButton}
                 title={'Got it'}
                 onPress={() => {
+                  setModalVisible2(false);
                   props.navigation.navigate(Constants.TOPUP_SCREEN);
                 }}
               />

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     color: Theme.colors.textColor1,
     fontSize: Theme.responsiveSize.size24,
     fontFamily: Theme.fonts.fontSansBold,
-    marginTop: Theme.responsiveSize.size16,
+    marginTop: Theme.responsiveSize.size08,
     lineHeight: Theme.responsiveSize.size34,
   },
   textSubTitle: {

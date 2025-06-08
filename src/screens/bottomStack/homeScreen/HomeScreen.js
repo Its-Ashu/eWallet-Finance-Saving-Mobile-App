@@ -116,11 +116,7 @@ const HomeScreen = props => {
       <SafeAreaView style={styles.viewMainContainer}>
         <View style={styles.container}>
           <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
-            <Image
-              style={styles.appImage}
-              resizeMode={'cover'}
-              source={Theme.icons.Top_View_BG}
-            />
+            <View style={styles.appImage} />
             <View style={styles.viewTop}>
               <Text style={styles.textTitle}>{'Welcome, Robert'}</Text>
               <Text

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import Theme from '../../../theme/Theme';
 import styles from './styles';

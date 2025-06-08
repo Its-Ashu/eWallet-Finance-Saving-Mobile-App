@@ -29,11 +29,7 @@ const ProfileScreen = props => {
         <View style={styles.container}>
           <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
             <View style={{marginBottom: Theme.responsiveSize.size80}}>
-              <Image
-                style={styles.appImage}
-                resizeMode={'cover'}
-                source={Theme.icons.Top_View_BG}
-              />
+              <View style={styles.appImage} />
               <View style={styles.viewTop}>
                 <Image
                   style={styles.profileIcon}

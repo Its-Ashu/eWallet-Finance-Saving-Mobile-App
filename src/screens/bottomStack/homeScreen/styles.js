@@ -14,11 +14,14 @@ const styles = StyleSheet.create({
     backgroundColor: Theme.colors.bgColor2,
   },
   appImage: {
+    flex: 1,
     position: 'absolute',
-    height: width + Theme.responsiveSize.size58,
-    width: width,
-    marginTop: -Theme.responsiveSize.size50,
+    backgroundColor: Theme.colors.bgColor1,
+    height: width,
+    width: '100%',
     zIndex: -1,
+    borderBottomEndRadius: Theme.responsiveSize.size34,
+    borderBottomStartRadius: Theme.responsiveSize.size34,
   },
   viewTop: {
     paddingTop: Theme.responsiveSize.size50,

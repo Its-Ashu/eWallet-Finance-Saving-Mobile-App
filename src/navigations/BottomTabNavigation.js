@@ -50,7 +50,7 @@ const BottomTabNavigation = props => {
 
     return (
       <View style={styles.container}>
-        <Svg width={'100%'} height={height} style={styles.svg}>
+        <Svg width={width} height={height} style={styles.svg}>
           <Path fill={Theme.colors.bgColor2} d={getPath()} />
         </Svg>
 

@@ -37,7 +37,9 @@ const OnboardingHomeScreen = props => {
           <Button
             viewStyle={{backgroundColor: Theme.colors.bgColor1}}
             title={'Sign In'}
-            onPress={() => {}}
+            onPress={() => {
+              props.navigation.navigate(Constants.LOGIN_SCREEN);
+            }}
           />
         </View>
       </SafeAreaView>

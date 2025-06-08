@@ -77,10 +77,10 @@ const RegisterCheckScreen = props => {
             position: 'absolute',
             zIndex: 1,
             alignSelf: 'center',
-            top: Theme.responsiveSize.size62,
+            top: Theme.responsiveSize.size42 + 4,
           }}
           viewProgress={{backgroundColor: Theme.colors.bgColor12}}
-          progress={0.625}
+          progress={0.725}
           onPressClose={() => {
             props.navigation.goBack();
           }}

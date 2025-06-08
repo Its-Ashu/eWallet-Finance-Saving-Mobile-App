@@ -99,6 +99,7 @@ We've added your card.`}
                 viewMain={styles.viewButton}
                 title={'Thanks'}
                 onPress={() => {
+                  setModalVisible(false);
                   props?.navigation?.navigate(Constants.BOTTOM_TAB_NAVIGATION, {
                     screen: Constants.PROFILE_SCREEN,
                     params: {

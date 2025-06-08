@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   modalIconContainer: {
     alignItems: 'center',
-    marginTop: Theme.responsiveSize.size80,
+    marginTop: Theme.responsiveSize.size100,
   },
   modalIcon: {
     width: Theme.responsiveSize.size200,

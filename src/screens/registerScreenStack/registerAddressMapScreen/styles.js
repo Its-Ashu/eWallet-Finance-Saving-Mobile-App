@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginTop: Theme.responsiveSize.size16,
   },
   textTitle: {
-    marginTop: Theme.responsiveSize.size14,
+    marginTop: Theme.responsiveSize.size12,
     fontSize: Theme.responsiveSize.size24,
     fontFamily: Theme.fonts.fontSansBold,
     color: Theme.colors.textColor1,
